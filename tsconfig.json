@@ -1,0 +1,14 @@
+{
+  "extends": "@nexim/typescript-config/tsconfig.json",
+  "compilerOptions": {
+    "noEmit": true,
+    "types": ["node"]
+  },
+  "files": [],
+  "exclude": [],
+  "references": [
+    {
+      "path": "./packages/eleventy-config"
+    }
+  ]
+}

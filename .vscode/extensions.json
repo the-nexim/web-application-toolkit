@@ -1,0 +1,32 @@
+{
+  "recommendations": [
+    "ahmadalli.vscode-nginx-conf",
+    "arcanis.vscode-zipfs",
+    "bbugh.change-color-format",
+    "bradlc.vscode-tailwindcss",
+    "cardinal90.multi-cursor-case-preserve",
+    "christian-kohler.path-intellisense",
+    "csstools.postcss",
+    "davidanson.vscode-markdownlint",
+    "dbaeumer.vscode-eslint",
+    "dotjoshjohnson.xml",
+    "editorconfig.editorconfig",
+    "esbenp.prettier-vscode",
+    "fabiospampinato.vscode-monokai-night",
+    "foxundermoon.shell-format",
+    "ginfuru.better-nunjucks",
+    "github.copilot-chat",
+    "github.vscode-github-actions",
+    "github.vscode-pull-request-github",
+    "guapibai.nunjucks-prettier",
+    "henoc.svgeditor",
+    "humao.rest-client",
+    "irongeek.vscode-env",
+    "streetsidesoftware.code-spell-checker-persian",
+    "streetsidesoftware.code-spell-checker",
+    "stylelint.vscode-stylelint",
+    "yzhang.markdown-all-in-one",
+    "runem.lit-plugin",
+    "gruntfuggly.todo-tree"
+  ]
+}

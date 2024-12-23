@@ -1,0 +1,75 @@
+# yaml-language-server: $schema=https://json.schemastore.org/github-workflow.json
+
+name: Build & Lint & Test & Release
+
+on:
+  workflow_dispatch:
+
+env:
+  NODE_VERSION: lts/*
+  GPG_KEY_ID: ${{ vars.GPG_KEY_ID }}
+
+jobs:
+  main:
+    name: Build & Lint & Test & Release
+    runs-on: ubuntu-latest
+
+    permissions:
+      contents: write
+
+    steps:
+      - name: ⤵️ Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: 🙂‍↔️ Import GPG key
+        run: |
+          echo "${{ secrets.GPG_PRIVATE_KEY }}" | gpg --batch --import
+          echo -e "5\ny\n" | gpg --batch --yes --command-fd 0 --edit-key ${{ env.GPG_KEY_ID }} trust quit
+        env:
+          GPG_PRIVATE_KEY: ${{ secrets.GPG_PRIVATE_KEY }}
+
+      - name: 🫡 Setup Git
+        run: |
+          git config --global user.name "njfamirm-bot"
+          git config --global user.email "bot@njfamirm.ir"
+          git config --global user.signingkey ${{ env.GPG_KEY_ID }}
+          git config --global commit.gpgsign true
+
+      - name: 🏗 Setup nodejs
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+
+      - name: 🏗 Setup nodejs corepack
+        run: corepack enable
+
+      - name: 🏗 Get yarn config
+        id: yarn_config
+        run: echo "cache_folder=$(yarn config get cacheFolder)" >> $GITHUB_OUTPUT
+
+      - name: 🏗 Cache Layer
+        uses: actions/cache@v4
+        with:
+          path: ${{ steps.yarn_config.outputs.cache_folder }}
+          key: ${{ runner.os }}-yarn-${{ hashFiles('yarn.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-yarn-
+
+      - name: 🏗 Install dependencies
+        run: yarn install --immutable
+
+      - name: 🚀 Build Typescript
+        run: yarn build
+
+      - name: 🚀 Run ESLint
+        run: yarn lint
+
+      - name: 🧪 Run Test
+        run: yarn test
+
+      - name: 🤖 Get Release
+        run: yarn release -y
+        env:
+          GITHUB_TOKEN: ${{ secrets.BOT_TOKEN }}

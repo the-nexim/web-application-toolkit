@@ -1,0 +1,126 @@
+# https://docs.github.com/github/administering-a-repository/configuration-options-for-dependency-updates
+
+version: 2
+updates:
+  - package-ecosystem: github-actions
+    directory: /
+    open-pull-requests-limit: 20
+    commit-message:
+      prefix: deps
+      include: scope
+    reviewers:
+      - njfamirm
+    schedule:
+      interval: weekly
+      time: '10:30'
+      day: thursday
+    labels:
+      - ci
+      - priority-low
+      - maintenance
+    groups:
+      github-actions:
+        patterns:
+          - '*'
+
+  - package-ecosystem: npm
+    directory: /
+    versioning-strategy: increase
+    open-pull-requests-limit: 20
+    commit-message:
+      prefix: deps
+      include: scope
+    reviewers:
+      - njfamirm
+    schedule:
+      interval: weekly
+      time: '10:30'
+      day: thursday
+    labels:
+      - dependencies
+      - ci
+      - priority-low
+      - maintenance
+    groups:
+      production-dependencies:
+        dependency-type: 'production'
+        exclude-patterns:
+          - '@alwatr/*'
+          - '@nexim/*'
+          - 'alwatr'
+      development-dependencies:
+        exclude-patterns:
+          - '@alwatr/*'
+          - '@nexim/*'
+          - 'alwatr'
+      alwatr:
+        patterns:
+          - '@alwatr/*'
+          - 'alwatr'
+      nexim:
+        patterns:
+          - '@nexim/*'
+    ignore:
+      - dependency-name: 'eslint'
+        update-types:
+          - version-update:semver-major
+      - dependency-name: '@typescript-eslint/eslint-plugin'
+        update-types:
+          - version-update:semver-major
+      - dependency-name: '@typescript-eslint/parser'
+        update-types:
+          - version-update:semver-major
+      - dependency-name: 'conventional-changelog-conventionalcommits'
+        update-types:
+          - version-update:semver-major
+
+  - package-ecosystem: docker
+    directory: /packages/app
+    reviewers:
+      - njfamirm
+    schedule:
+      interval: weekly
+      time: '10:30'
+      day: thursday
+    labels:
+      - ci
+      - priority-low
+      - maintenance
+    ignore:
+      - dependency-name: 'alwatr/node'
+        update-types:
+          - version-update:semver-major
+
+  - package-ecosystem: docker
+    directory: /packages/admin
+    reviewers:
+      - njfamirm
+    schedule:
+      interval: weekly
+      time: '10:30'
+      day: thursday
+    labels:
+      - ci
+      - priority-low
+      - maintenance
+    ignore:
+      - dependency-name: 'alwatr/node'
+        update-types:
+          - version-update:semver-major
+
+  - package-ecosystem: docker
+    directory: /packages/api
+    reviewers:
+      - njfamirm
+    schedule:
+      interval: weekly
+      time: '10:30'
+      day: thursday
+    labels:
+      - ci
+      - priority-low
+      - maintenance
+    ignore:
+      - dependency-name: 'alwatr/node'
+        update-types:
+          - version-update:semver-major

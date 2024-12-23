@@ -1,0 +1,72 @@
+{
+  "name": "application-toolkit-monorepo",
+  "private": true,
+  "description": "Necessary library for all ECMAScript (JavaScript/TypeScript) projects.",
+  "repository": "https://github.com/the-nexim/application-toolkit",
+  "license": "AGPL-3.0-only",
+  "author": "S. Amir Mohammad Najafi <njfamirm@gmail.com> (https://www.njfamirm.ir)",
+  "contributors": [
+    "Arash Ghardashpoor <arash.qardashpoor@gmail.com> (https://www.agpagp.ir)"
+  ],
+  "type": "module",
+  "workspaces": [
+    "packages/*"
+  ],
+  "scripts": {
+    "b": "yarn run build",
+    "build": "lerna run build",
+    "c": "yarn run clean",
+    "cb": "yarn run clean && yarn run build",
+    "clean": "git add -v . && git clean -d -x -f --exclude=node_modules --exclude='*.env' --exclude=_data --exclude='.pnp*' --exclude=.yarn",
+    "f": "yarn run format",
+    "format": "yarn run format:prettier && yarn run format:eslint",
+    "format:eslint": "yarn run lint:es --fix",
+    "format:prettier": "prettier . --ignore-path .prettierignore --write",
+    "l": "yarn run lint",
+    "lint": "yarn run lint:es & yarn run lint:ts",
+    "lint:es": "eslint . --config .eslintrc.json --ext .ts --ext .js --ext .cjs --ext .mjs --ignore-path .prettierignore",
+    "lint:ts": "lerna run build:ts",
+    "publish": "lerna publish from-package",
+    "pull": "git pull",
+    "release": "lerna version",
+    "rl": "yarn run pull && yarn run clean && yarn run build && yarn run test && yarn run release",
+    "t": "yarn run test",
+    "test": "lerna run test",
+    "upd": "yarn set version latest; yarn up '*'; yarn up '*' -R; yarn dlx @yarnpkg/sdks vscode; yarn dedupe"
+  },
+  "devDependencies": {
+    "@lerna-lite/changed": "^3.10.1",
+    "@lerna-lite/cli": "^3.10.1",
+    "@lerna-lite/diff": "^3.10.1",
+    "@lerna-lite/exec": "^3.10.1",
+    "@lerna-lite/publish": "^3.10.1",
+    "@lerna-lite/run": "^3.10.1",
+    "@lerna-lite/version": "^3.10.1",
+    "@nexim/eslint-config": "1.0.1",
+    "@nexim/prettier-config": "1.0.1",
+    "@nexim/typescript-config": "1.0.1",
+    "@types/node": "^22.10.2",
+    "@typescript-eslint/eslint-plugin": "^7.15.0",
+    "@typescript-eslint/parser": "^7.15.0",
+    "ava": "^6.2.0",
+    "conventional-changelog-conventionalcommits": "^7.0.2",
+    "eslint": "^8.57.1",
+    "eslint-import-resolver-typescript": "^3.7.0",
+    "eslint-plugin-import": "^2.31.0",
+    "eslint-plugin-require-extensions": "^0.1.3",
+    "prettier": "^3.4.2",
+    "prettier-plugin-packagejson": "^2.5.6",
+    "prettier-plugin-tailwindcss": "^0.6.9",
+    "typescript": "^5.7.2"
+  },
+  "dependenciesMeta": {
+    "prettier-plugin-tailwindcss@0.6.9": {
+      "unplugged": true
+    }
+  },
+  "packageManager": "yarn@4.5.3",
+  "engines": {
+    "node": ">=18.16.0",
+    "yarn": ">=4.0.0"
+  }
+}
