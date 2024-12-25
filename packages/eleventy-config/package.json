@@ -53,6 +53,7 @@
     "@alwatr/type-helper": "^5.0.0",
     "@nexim/typescript-config": "^1.0.1",
     "@swc/html": "^1.10.1",
+    "@types/node": "^22.10.2",
     "ava": "^6.2.0",
     "cssnano": "^7.0.6",
     "markdown-it": "^14.1.0",
