@@ -6,7 +6,5 @@
     "emitDeclarationOnly": true,
     "composite": true,
     "types": ["@alwatr/nano-build", "@alwatr/type-helper"]
-  },
-  "include": ["src/**/*.ts"],
-  "references": []
+  }
 }
