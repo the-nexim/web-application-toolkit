@@ -44,6 +44,12 @@
     "test": "wireit",
     "watch": "wireit"
   },
+  "dependencies": {
+    "@alwatr/flatomise": "^5.0.0",
+    "@alwatr/logger": "^5.0.0",
+    "@alwatr/package-tracer": "^5.0.0",
+    "zx": "^8.3.0"
+  },
   "devDependencies": {
     "@alwatr/nano-build": "^5.0.0",
     "@alwatr/type-helper": "^5.0.0",
@@ -53,13 +59,8 @@
     "wireit": "^0.14.9"
   },
   "publishConfig": {
-    "access": "public"
-  },
-  "dependencies": {
-    "@alwatr/flatomise": "^5.0.0",
-    "@alwatr/logger": "^5.0.0",
-    "@alwatr/package-tracer": "^5.0.0",
-    "zx": "^8.3.0"
+    "access": "public",
+    "registry": "https://npm.pkg.github.com/"
   },
   "wireit": {
     "test": {

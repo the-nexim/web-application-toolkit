@@ -1,6 +1,7 @@
 {
   "name": "@nexim/deployment",
   "version": "0.0.0",
+  "private": true,
   "description": "Enhanced production ready eleventy config.",
   "keywords": [
     "bash",
@@ -40,10 +41,15 @@
     "!demo/**/*"
   ],
   "scripts": {
-    "start": "wireit",
     "build": "wireit",
+    "start": "wireit",
     "test": "wireit",
     "watch": "wireit"
+  },
+  "dependencies": {
+    "@alwatr/package-tracer": "^5.0.0",
+    "@nexim/script-toolkit": "workspace:^",
+    "zx": "^8.3.0"
   },
   "devDependencies": {
     "@alwatr/nano-build": "^5.0.0",
@@ -54,12 +60,8 @@
     "wireit": "^0.14.9"
   },
   "publishConfig": {
-    "access": "public"
-  },
-  "dependencies": {
-    "@alwatr/package-tracer": "^5.0.0",
-    "@nexim/script-toolkit": "workspace:^",
-    "zx": "^8.3.0"
+    "access": "public",
+    "registry": "https://npm.pkg.github.com/"
   },
   "wireit": {
     "test": {

@@ -21,6 +21,7 @@ jobs:
 
     permissions:
       contents: read
+      packages: write
 
     steps:
       - name: ⤵️ Checkout repository
@@ -30,7 +31,7 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: ${{ env.NODE_VERSION }}
-          registry-url: 'https://registry.npmjs.org'
+          registry-url: 'https://npm.pkg.github.com/'
 
       - name: 🏗 Setup nodejs corepack
         run: corepack enable
@@ -58,4 +59,4 @@ jobs:
       - name: 🚀 Publish
         run: yarn run publish --yes
         env:
-          NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}
+          NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
