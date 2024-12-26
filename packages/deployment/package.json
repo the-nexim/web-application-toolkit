@@ -1,0 +1,114 @@
+{
+  "name": "@nexim/deployment",
+  "version": "1.0.0",
+  "description": "Enhanced production ready eleventy config.",
+  "keywords": [
+    "bash",
+    "script",
+    "typescript",
+    "nexim"
+  ],
+  "homepage": "https://github.com/the-nexim/application-toolkit/tree/next/packages/deployment#readme",
+  "bugs": {
+    "url": "https://github.com/the-nexim/application-toolkit/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/the-nexim/application-toolkit",
+    "directory": "packages/deployment"
+  },
+  "license": "AGPL-3.0-only",
+  "author": "S. Amir Mohammad Najafi <njfamirm@gmail.com> (https://www.njfamirm.ir)",
+  "contributors": [
+    "Arash Ghardashpoor <arash.qardashpoor@gmail.com> (https://www.agpagp.ir)"
+  ],
+  "type": "module",
+  "exports": {
+    ".": {
+      "types": "./dist/main.d.ts",
+      "import": "./dist/main.mjs",
+      "require": "./dist/main.cjs"
+    }
+  },
+  "main": "./dist/main.cjs",
+  "module": "./dist/main.mjs",
+  "types": "./dist/main.d.ts",
+  "files": [
+    "**/*.{js,mjs,cjs,map,d.ts,html,md,LEGAL.txt}",
+    "LICENSE",
+    "!**/*.test.js",
+    "!demo/**/*"
+  ],
+  "scripts": {
+    "start": "wireit",
+    "build": "wireit",
+    "test": "wireit",
+    "watch": "wireit"
+  },
+  "devDependencies": {
+    "@alwatr/nano-build": "^5.0.0",
+    "@alwatr/type-helper": "^5.0.0",
+    "@nexim/typescript-config": "1.0.1",
+    "ava": "^6.2.0",
+    "typescript": "^5.7.2",
+    "wireit": "^0.14.9"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "dependencies": {
+    "@alwatr/package-tracer": "^5.0.0",
+    "@nexim/script-toolkit": "workspace:^",
+    "zx": "^8.3.0"
+  },
+  "wireit": {
+    "test": {
+      "command": "NODE_OPTIONS=\"$NODE_OPTIONS --enable-source-maps --experimental-vm-modules\" ava"
+    },
+    "build": {
+      "dependencies": [
+        "build:type",
+        "build:es"
+      ]
+    },
+    "build:es": {
+      "command": "nano-build --preset=module",
+      "files": [
+        "src",
+        "tsconfig.json"
+      ],
+      "clean": "if-file-deleted",
+      "output": [
+        "dist/es",
+        "tsconfig.tsbuildinfo"
+      ]
+    },
+    "build:type": {
+      "command": "tsc --build"
+    },
+    "watch": {
+      "dependencies": [
+        "watch:ts"
+      ]
+    },
+    "serve": {
+      "command": "yarn node dist/main.mjs"
+    },
+    "start": {
+      "dependencies": [
+        "build",
+        "serve"
+      ]
+    },
+    "watch:ts": {
+      "command": "tsc --build --watch --preserveWatchOutput",
+      "dependencies": [
+        "watch:es"
+      ]
+    },
+    "watch:es": {
+      "command": "nano-build --preset=module -- --watch",
+      "service": true
+    }
+  }
+}
