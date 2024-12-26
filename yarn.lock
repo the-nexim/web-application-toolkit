@@ -719,9 +719,9 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@nexim/eslint-config@npm:1.0.1":
-  version: 1.0.1
-  resolution: "@nexim/eslint-config@npm:1.0.1"
+"@nexim/eslint-config@npm:1.1.0":
+  version: 1.1.0
+  resolution: "@nexim/eslint-config@npm:1.1.0"
   peerDependencies:
     "@typescript-eslint/eslint-plugin": ">7.0.0 <8.0.0"
     "@typescript-eslint/parser": ">7.0.0 <8.0.0"
@@ -729,7 +729,7 @@ __metadata:
     eslint-import-resolver-typescript: ">3.0.0"
     eslint-plugin-import: ">2.0.0"
     eslint-plugin-require-extensions: ">0.1.0"
-  checksum: 10c0/296a08fc7437f16a7bc2f5ddaf4c0821b5296c907802500d725c3c8cb900e45abf0c8ec50baedc0c7e7a8701f3640c4cf98aaa6c1941b1a681d38ce1e12c020f
+  checksum: 10c0/eb4f721ba6a20f7453ab301beef8b5850a95d3076ea1a3ac5911d9b67c09a80cf220adb5e7634eab9c81507f3f5baeec2d5968520d3ffaacc1ab9b6749a2427a
   languageName: node
   linkType: hard
 
@@ -1639,7 +1639,7 @@ __metadata:
     "@lerna-lite/publish": "npm:^3.10.1"
     "@lerna-lite/run": "npm:^3.10.1"
     "@lerna-lite/version": "npm:^3.10.1"
-    "@nexim/eslint-config": "npm:1.0.1"
+    "@nexim/eslint-config": "npm:1.1.0"
     "@nexim/prettier-config": "npm:1.0.1"
     "@nexim/typescript-config": "npm:1.0.1"
     "@types/node": "npm:^22.10.2"

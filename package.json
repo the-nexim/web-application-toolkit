@@ -30,7 +30,7 @@
     "@lerna-lite/publish": "^3.10.1",
     "@lerna-lite/run": "^3.10.1",
     "@lerna-lite/version": "^3.10.1",
-    "@nexim/eslint-config": "1.0.1",
+    "@nexim/eslint-config": "1.1.0",
     "@nexim/prettier-config": "1.0.1",
     "@nexim/typescript-config": "1.0.1",
     "@types/node": "^22.10.2",
