@@ -1,0 +1,13 @@
+{
+  "extends": "@nexim/typescript-config/tsconfig.json",
+  "compilerOptions": {
+    "rootDir": "src",
+    "outDir": "dist",
+    "emitDeclarationOnly": true,
+    "composite": true,
+    "types": ["@alwatr/nano-build", "@alwatr/type-helper"],
+    "module": "ESNext"
+  },
+  "include": ["src/**/*.ts"],
+  "references": []
+}

@@ -8,7 +8,10 @@
   "exclude": [],
   "references": [
     {
-      "path": "./packages/eleventy-config"
+      "path": "./packages/script-toolkit"
+    },
+    {
+      "path": "./packages/deployment"
     }
   ]
 }
