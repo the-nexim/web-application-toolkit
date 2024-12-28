@@ -6,9 +6,5 @@
   },
   "files": [],
   "exclude": [],
-  "references": [
-    {
-      "path": "./packages/eleventy-config"
-    }
-  ]
+  "references": []
 }
