@@ -1,6 +1,6 @@
 import {minify} from '@swc/html';
 
-import {logger} from './logger.mjs';
+import {logger} from './logger.js';
 
 /**
  * @type {import("@swc/html").Options}

@@ -12,7 +12,7 @@ import postcssViewportUnitFallback from 'postcss-viewport-unit-fallback';
 import tailwindcss from 'tailwindcss';
 import postcssNesting from 'tailwindcss/nesting/index.js';
 
-import {logger} from './logger.mjs';
+import {logger} from './logger.js';
 
 const basePath = 'style';
 

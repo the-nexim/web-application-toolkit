@@ -3,7 +3,7 @@ import {env} from 'process';
 
 import {generateSW} from 'workbox-build';
 
-import {logger} from './logger.mjs';
+import {logger} from './logger.js';
 
 const deploymentServiceWorkerContent = "console.log('service worker not build in deployment.')";
 const serviceWorkerDest = 'dist/service-worker.js';

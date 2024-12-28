@@ -1,7 +1,7 @@
 import Eleventy from '@11ty/eleventy';
 import {createLogger} from '@alwatr/logger';
 
-import eleventyConfig from './eleventy-config.mjs';
+import eleventyConfig from './eleventy-config.js';
 
 const logger = createLogger(__package_name__, true);
 
