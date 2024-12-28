@@ -1,4 +1,4 @@
-import slugifyFilter from '@11ty/eleventy/src/Filters/Slugify.js';
+// import slugify from '@sindresorhus/slugify';
 import urlFilter from '@11ty/eleventy/src/Filters/Url.js';
 import TemplateConfig from '@11ty/eleventy/src/TemplateConfig.js';
 import directoryOutputPlugin from '@11ty/eleventy-plugin-directory-output';
@@ -10,6 +10,8 @@ import {minifyHtml} from './minify-html.mjs';
 import {postcssBuild} from './postcss.mjs';
 import {dateString, timeString, trim} from './util.mjs';
 import {generateServiceWorker} from './workbox.mjs';
+import UpgradeHelper from "@11ty/eleventy-upgrade-help";
+
 
 // https://github.com/11ty/eleventy/blob/v2.x/src/defaultConfig.js
 /**
@@ -17,9 +19,10 @@ import {generateServiceWorker} from './workbox.mjs';
  * @param {import("@11ty/eleventy").UserConfig} config
  * @returns {ReturnType<import("@11ty/eleventy/src/defaultConfig")>}
  */
-function _eleventyConfig(config) {
+export default function _eleventyConfig(config) {
   // eslint-disable-next-line @typescript-eslint/no-this-alias
   let templateConfig = this;
+  config.addPlugin(UpgradeHelper);
 
   config.addPassthroughCopy({
     assets: '/',
@@ -46,12 +49,12 @@ function _eleventyConfig(config) {
       permalink: markdownItAnchor.permalink.headerLink(), // this can change create link mode
       level: 2, // apply to h2, h3 and ...., don't apply to h1
       tabIndex: false,
-      slugify: slugifyFilter, // this slugify convert persian to english
+      // slugify: slugify, // this slugify convert persian to english
     });
   config.setLibrary('md', markdownLibrary);
 
   // config.addFilter("slug", slugFilter);
-  config.addFilter('slugify', slugifyFilter);
+  // config.addFilter('slugify', slugify);
 
   // Add pathPrefix manually to a URL
   config.addFilter('url', function addPathPrefix(url, pathPrefixOverride) {
@@ -63,7 +66,7 @@ function _eleventyConfig(config) {
       pathPrefix = templateConfig.getPathPrefix();
     }
 
-    return urlFilter.call(this, url, pathPrefix);
+    // return urlFilter.call(this, url, pathPrefix);
   });
 
   config.addFilter('log', (input, ...messages) => {
@@ -115,6 +118,7 @@ function _eleventyConfig(config) {
       // "haml",
       // "pug",
       // "html",
+      '11ty.jsx',
       'md',
       'njk',
       '11ty.js',
@@ -154,4 +158,4 @@ function _eleventyConfig(config) {
   };
 }
 
-export const eleventyConfig = new TemplateConfig(_eleventyConfig);
+// export const eleventyConfig = new TemplateConfig(_eleventyConfig);
