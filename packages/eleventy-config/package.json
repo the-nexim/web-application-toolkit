@@ -41,29 +41,96 @@
     "!demo/**/*"
   ],
   "scripts": {
-    "b": "yarn run build",
-    "build": "yarn run build:ts && yarn run build:es",
-    "build:es": "nano-build --preset=module",
-    "build:ts": "tsc --build",
-    "c": "yarn run clean",
-    "cb": "yarn run clean && yarn run build",
-    "clean": "rm -rfv dist *.tsbuildinfo",
-    "d": "yarn run build:es && yarn node --enable-source-maps --trace-warnings",
-    "t": "yarn run test",
-    "test": "NODE_OPTIONS=\"$NODE_OPTIONS --enable-source-maps --experimental-vm-modules\" ava",
-    "w": "yarn run watch",
-    "watch": "yarn run watch:ts & yarn run watch:es",
-    "watch:es": "yarn run build:es --watch",
-    "watch:ts": "yarn run build:ts --watch --preserveWatchOutput"
+    "build": "wireit",
+    "test": "wireit",
+    "watch": "wireit"
   },
   "devDependencies": {
+    "@11ty/eleventy": "^2.0.1",
+    "@11ty/eleventy-plugin-directory-output": "^1.0.1",
+    "@alwatr/logger": "^5.0.0",
     "@alwatr/nano-build": "^5.0.0",
     "@alwatr/type-helper": "^5.0.0",
-    "@nexim/typescript-config": "1.0.1",
+    "@nexim/typescript-config": "^1.0.1",
+    "@swc/html": "^1.10.1",
+    "@types/node": "^22.10.2",
     "ava": "^6.2.0",
-    "typescript": "^5.7.2"
+    "cssnano": "^7.0.6",
+    "markdown-it": "^14.1.0",
+    "markdown-it-anchor": "^9.2.0",
+    "markdown-it-attrs": "^4.3.0",
+    "postcss": "^8.4.49",
+    "postcss-import": "^16.1.0",
+    "postcss-preset-env": "^10.1.2",
+    "postcss-variable-compress": "^3.0.0",
+    "postcss-viewport-unit-fallback": "^1.0.1",
+    "tailwindcss": "^3.4.17",
+    "typescript": "^5.7.2",
+    "wireit": "^0.14.9",
+    "workbox-build": "^7.3.0"
   },
   "publishConfig": {
     "access": "public"
+  },
+  "wireit": {
+    "build": {
+      "dependencies": [
+        "build:11ty"
+      ]
+    },
+    "build:11ty": {
+      "command": "yarn node script/build.mjs",
+      "files": [
+        "site",
+        "assets",
+        "dist/es"
+      ],
+      "output": [
+        "dist",
+        "!dist/es"
+      ],
+      "dependencies": [
+        "build:es"
+      ]
+    },
+    "build:es": {
+      "command": "nano-build --preset=weaver",
+      "files": [
+        "src",
+        "tsconfig.json"
+      ],
+      "clean": "if-file-deleted",
+      "output": [
+        "dist/es",
+        "tsconfig.tsbuildinfo"
+      ]
+    },
+    "serve": {
+      "command": "wds",
+      "service": true
+    },
+    "start": {
+      "dependencies": [
+        "build",
+        "serve"
+      ]
+    },
+    "watch": {
+      "dependencies": [
+        "watch:11ty",
+        "serve"
+      ]
+    },
+    "watch:11ty": {
+      "command": "yarn run build:11ty -- --watch",
+      "service": true,
+      "dependencies": [
+        "watch:es"
+      ]
+    },
+    "watch:es": {
+      "command": "yarn run build:es -- --watch",
+      "service": true
+    }
   }
 }
