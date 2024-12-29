@@ -1,40 +1,48 @@
-// import slugify from '@sindresorhus/slugify';
 import directoryOutputPlugin from '@11ty/eleventy-plugin-directory-output';
-import UpgradeHelper from '@11ty/eleventy-upgrade-help';
 import markdownIt from 'markdown-it';
 import markdownItAnchor from 'markdown-it-anchor';
 import markdownItAttrs from 'markdown-it-attrs';
 
 import {minifyHtml} from './minify-html.js';
 import {postcssBuild} from './postcss.js';
-import {dateString, timeString} from './util/date-filters.js';
 import {trim} from './util/trim.js';
 import {generateServiceWorker} from './workbox.js';
 
-// https://github.com/11ty/eleventy/blob/v2.x/src/defaultConfig.js
 /**
- * 11ty configuration.
- * @param {import("@11ty/eleventy").UserConfig} eleventyConfig
- * @param {Record<string, any>} custom
- * @returns {ReturnType<import("@11ty/eleventy").UserConfig>}
+ * Configures Eleventy with nexim app specification and html minify, postcss, workbox, etc.
+ *
+ * @param eleventyConfig - The eleventy config
+ * @returns The eleventyConfig return type
+ *
+ * @see https://www.11ty.dev/docs/config/
+ * @see https://www.11ty.dev/docs/config-shapes/#optional-return-object
+ *
+ * @example
+ * import {eleventyConfiguration} from '@nexim/eleventy-config';
+ *
+ * export default function (eleventyConfig) {
+ *   return eleventyConfiguration(eleventyConfig);
+ * }
  */
-export default function eleventyConfiguration(eleventyConfig, custom) {
-  // eslint-disable-next-line @typescript-eslint/no-this-alias
-  eleventyConfig.addPlugin(UpgradeHelper);
+export function eleventyConfiguration(eleventyConfig) {
 
   eleventyConfig.addPassthroughCopy({
     assets: '/',
     'assets/img/meta/favicon.ico': '/favicon.ico',
   });
 
-  eleventyConfig.addWatchTarget([
-    'site', // templates root Directory
-    'shortcode', // shortcodes Directory
-    'style', // styles Directory
-    'dist/es', // building typescript Directory
-  ]);
-  custom = custom || {};
-  console.log(custom);
+  // templates root Directory
+  eleventyConfig.addWatchTarget('site');
+
+  // shortcodes Directory
+  eleventyConfig.addWatchTarget('shortcode');
+
+  // styles Directory
+  eleventyConfig.addWatchTarget('style');
+
+  // build target typescript Directory
+  eleventyConfig.addWatchTarget('dist/es');
+
   /**
    * Watch javascript dependencies
    */
@@ -52,12 +60,6 @@ export default function eleventyConfiguration(eleventyConfig, custom) {
       // slugify: slugify, // this slugify convert persian to english so must set custom slugify
     });
   eleventyConfig.setLibrary('md', markdownLibrary);
-
-  /**
-   * Date related filter
-   */
-  eleventyConfig.addFilter('dateString', dateString);
-  eleventyConfig.addFilter('timeString', timeString);
 
   /**
    * Simple trim filter
@@ -102,4 +104,34 @@ export default function eleventyConfiguration(eleventyConfig, custom) {
    * Add Html, Nunjucks, Markdown, Tsx, Jsx, for template engines
    */
   eleventyConfig.templateFormats = ['md', 'njk', '11ty.js'];
+
+  return {
+    // if your site lives in a subdirectory, change this
+    pathPrefix: '/',
+    markdownTemplateEngine: 'md',
+    htmlTemplateEngine: 'njk',
+
+    handlebarsHelpers: {},
+    nunjucksFilters: {},
+
+    // "index" will look for `directory/index.*` directory data files instead of `directory/directory.*`
+    dataFileDirBaseNameOverride: false,
+
+    keys: {
+      package: 'pkg',
+      layout: 'layout',
+      permalink: 'permalink',
+      permalinkRoot: 'permalinkBypassOutputDir',
+      engineOverride: 'templateEngineOverride',
+      computed: 'eleventyComputed',
+    },
+
+    dir: {
+      input: 'site',
+      output: 'dist',
+      includes: '_include',
+      data: '_data',
+      layouts: '_layout',
+    },
+  };
 }

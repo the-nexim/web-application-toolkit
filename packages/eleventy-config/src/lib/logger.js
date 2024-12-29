@@ -1,3 +1,3 @@
 import {createLogger} from '@alwatr/logger';
 
-export const logger = createLogger('@alwatr/order-build', true);
+export const logger = createLogger(__package_name__);

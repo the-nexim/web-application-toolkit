@@ -1,6 +1,5 @@
 import {writeFile} from 'fs/promises';
-import {env} from 'process';
-
+import {platformInfo} from '@alwatr/platform-info'
 import {generateSW} from 'workbox-build';
 
 import {logger} from './logger.js';
@@ -9,7 +8,7 @@ const deploymentServiceWorkerContent = "console.log('service worker not build in
 const serviceWorkerDest = 'dist/service-worker.js';
 
 export function generateServiceWorker() {
-  if (env.NODE_ENV !== 'production') {
+  if (platformInfo.development !== true) {
     logger.logMethodArgs?.('generateServiceWorker', {mode: 'deployment'});
     return writeFile(serviceWorkerDest, deploymentServiceWorkerContent);
   }

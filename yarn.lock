@@ -2521,9 +2521,9 @@ __metadata:
     "@alwatr/logger": "npm:^5.0.0"
     "@alwatr/nano-build": "npm:^5.0.0"
     "@alwatr/package-tracer": "npm:^5.0.0"
+    "@alwatr/platform-info": "npm:^5.0.0"
     "@alwatr/type-helper": "npm:^5.0.0"
     "@nexim/typescript-config": "npm:^1.0.1"
-    "@sindresorhus/slugify": "npm:^2.2.1"
     "@swc/html": "npm:^1.10.1"
     "@types/11ty__eleventy-plugin-directory-output": "npm:^1.0.0"
     "@types/eleventy-plugin-toc": "npm:^1.1.0"
@@ -2545,6 +2545,8 @@ __metadata:
     typescript: "npm:^5.7.2"
     wireit: "npm:^0.14.9"
     workbox-build: "npm:^7.3.0"
+  peerDependencies:
+    "@11ty/eleventy": ^3.0.0
   languageName: unknown
   linkType: soft
 

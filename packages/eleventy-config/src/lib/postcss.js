@@ -11,8 +11,7 @@ import postcssVariableCompress from 'postcss-variable-compress';
 import postcssViewportUnitFallback from 'postcss-viewport-unit-fallback';
 import tailwindcss from 'tailwindcss';
 import postcssNesting from 'tailwindcss/nesting/index.js';
-
-import {logger} from './logger.js';
+import { logger } from './logger.js';
 
 const basePath = 'style';
 
@@ -83,5 +82,5 @@ export async function postcssBuild() {
   }
 
   const endTime = Date.now();
-  console.log(`⚡\u001b[32m Done in ${endTime - startTime}ms\u001b[0m`);
+  console.log(`⚡\u001b[32m PostCSS build done in ${endTime - startTime}ms\u001b[0m`);
 }

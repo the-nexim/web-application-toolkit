@@ -24,15 +24,22 @@ const swcHtmlOptions = {
   sortSpaceSeparatedAttributeValues: false,
 };
 
+/**
+ * Minify the html
+ *
+ * @this {any}
+ * @param {string} content - File content
+ */
 export async function minifyHtml(content) {
-  logger.logMethod?.('minifyHtml');
   if (!this.page.outputPath || !this.page.outputPath.endsWith('.html')) return content;
+  logger.logMethodArgs?.('minifyHtml', {path: this.page.outputPath});
+
   try {
     const result = await minify(Buffer.from(content), swcHtmlOptions);
     return result.code;
   }
   catch (err) {
-    logger.error('minifyHtml', err);
+    logger.error('minifyHtml', 'minify_error', err);
     return content;
   }
 }
