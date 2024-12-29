@@ -1,10 +1,10 @@
 # ECMAScript Nano Libs
 
-This repository contains numerous small utility packages. These packages serve various useful purposes and are written in nano ESModule without any dependencies.
+This repository contains numerous small utility packages. These packages serve various useful purposes and are written in nano ESModule.
 
 Here is a brief overview of the included libraries:
 
-1. [`eleventy-config`](./packages/eleventy-config): Enhanced production ready eleventy config.
+1. [`eleventy-config`](./packages/eleventy-config): An optimized, production-ready configuration for the [Eleventy](https://www.11ty.dev/) static site generator tailored for the [Nexim APP Template](https://github.com/the-nexim/nexim-app) structure.
 
 For more detailed information and guidelines on how to use each package, please refer to each package's README.
 
