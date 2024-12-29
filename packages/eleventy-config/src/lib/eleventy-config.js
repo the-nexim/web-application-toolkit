@@ -1,15 +1,15 @@
 // import slugify from '@sindresorhus/slugify';
 import directoryOutputPlugin from '@11ty/eleventy-plugin-directory-output';
+import UpgradeHelper from '@11ty/eleventy-upgrade-help';
 import markdownIt from 'markdown-it';
 import markdownItAnchor from 'markdown-it-anchor';
 import markdownItAttrs from 'markdown-it-attrs';
 
 import {minifyHtml} from './minify-html.js';
 import {postcssBuild} from './postcss.js';
-import {trim} from './util/trim.js';
 import {dateString, timeString} from './util/date-filters.js';
+import {trim} from './util/trim.js';
 import {generateServiceWorker} from './workbox.js';
-import UpgradeHelper from '@11ty/eleventy-upgrade-help';
 
 // https://github.com/11ty/eleventy/blob/v2.x/src/defaultConfig.js
 /**
@@ -18,7 +18,7 @@ import UpgradeHelper from '@11ty/eleventy-upgrade-help';
  * @param {Record<string, any>} custom
  * @returns {ReturnType<import("@11ty/eleventy").UserConfig>}
  */
-export default function (eleventyConfig, custom) {
+export default function eleventyConfiguration(eleventyConfig, custom) {
   // eslint-disable-next-line @typescript-eslint/no-this-alias
   eleventyConfig.addPlugin(UpgradeHelper);
 
@@ -33,7 +33,8 @@ export default function (eleventyConfig, custom) {
     'style', // styles Directory
     'dist/es', // building typescript Directory
   ]);
-
+  custom = custom || {};
+  console.log(custom);
   /**
    * Watch javascript dependencies
    */
@@ -88,8 +89,8 @@ export default function (eleventyConfig, custom) {
 
   /**
    * Add template cjs to extension
-  */
-  eleventyConfig.addExtension('template.cjs', { key: '11ty.js' });
+   */
+  eleventyConfig.addExtension('template.cjs', {key: '11ty.js'});
 
   /**
    * Set data root directory and base name of file
@@ -100,8 +101,5 @@ export default function (eleventyConfig, custom) {
   /**
    * Add Html, Nunjucks, Markdown, Tsx, Jsx, for template engines
    */
-  eleventyConfig.templateFormats = [
-      'md',
-      'njk',
-      '11ty.js']
+  eleventyConfig.templateFormats = ['md', 'njk', '11ty.js'];
 }

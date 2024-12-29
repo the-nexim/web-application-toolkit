@@ -1,6 +1,6 @@
 import {argv} from 'process';
 
-import {eleventyBuild} from './eleventy-build.mjs';
+import {eleventyBuild} from './eleventy-build.js';
 
 const watchMode = argv.includes('--watch');
 

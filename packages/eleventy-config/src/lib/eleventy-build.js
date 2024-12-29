@@ -16,7 +16,6 @@ export async function eleventyBuild({watchMode}) {
   logger.logMethodArgs?.('build', {watchMode});
 
   logger.logOther?.('📋 Copying assets...');
-  const fontName = 'vazirmatn';
 
   if (watchMode) {
     logger.logOther?.('👀 Watching...');
@@ -28,4 +27,3 @@ export async function eleventyBuild({watchMode}) {
     logger.logOther?.('✅ Done.');
   }
 }
-
