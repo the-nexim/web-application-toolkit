@@ -1,24 +1,25 @@
 import {existsSync} from 'fs';
 import {readFile, writeFile, mkdir, readdir} from 'fs/promises';
 import {join} from 'node:path';
-import {env} from 'process';
 
+import {platformInfo} from '@alwatr/platform-info';
 import cssnano from 'cssnano';
 import postcss from 'postcss';
 import postcssImport from 'postcss-import';
 import postcssPresetEnv from 'postcss-preset-env';
 import postcssVariableCompress from 'postcss-variable-compress';
+// @ts-expect-error - not type exists
 import postcssViewportUnitFallback from 'postcss-viewport-unit-fallback';
 import tailwindcss from 'tailwindcss';
 import postcssNesting from 'tailwindcss/nesting/index.js';
 
-import {logger} from './logger.mjs';
+import {logger} from './logger.js';
 
 const basePath = 'style';
 
 const postCssPlugins = [postcssImport({root: basePath}), postcssNesting, tailwindcss, postcssViewportUnitFallback, postcssPresetEnv];
 
-if (env.NODE_ENV === 'production') {
+if (platformInfo.development !== true) {
   postCssPlugins.push(
     postcssVariableCompress,
     cssnano({
@@ -29,8 +30,9 @@ if (env.NODE_ENV === 'production') {
 
 const postCss = postcss(postCssPlugins);
 
-export async function postcssBuild() {
+export async function postcssBuild(): Promise<void> {
   logger.logMethod?.('postcssBuild');
+
   const inputDir = basePath;
   const outputDir = 'dist/css/';
   const startTime = Date.now();
@@ -42,9 +44,7 @@ export async function postcssBuild() {
   const dirFileList = await readdir(inputDir);
 
   for (const fileName of dirFileList) {
-    if (!fileName.endsWith('.css')) {
-      continue;
-    }
+    if (!fileName.endsWith('.css')) continue;
 
     const inputFilePath = join(inputDir, fileName);
     const outputFilePath = join(outputDir, fileName);
@@ -56,7 +56,9 @@ export async function postcssBuild() {
       outputContent = (await postCss.process(fileContent, {from: inputFilePath, to: outputFilePath})).css;
     }
     catch (err) {
-      console.error(err);
+      logger.error('postcssBuild', 'build_error', err);
+
+      // Simple style to show error message
       outputContent = `
         html {
           background-color: #a11;
@@ -83,5 +85,5 @@ export async function postcssBuild() {
   }
 
   const endTime = Date.now();
-  console.log(`⚡\u001b[32m Done in ${endTime - startTime}ms\u001b[0m`);
+  logger.logOther?.(`PostCSS build done in ${endTime - startTime}ms`);
 }

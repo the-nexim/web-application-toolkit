@@ -3,9 +3,12 @@
   "compilerOptions": {
     "rootDir": "src",
     "outDir": "dist",
+    "allowJs": true,
     "emitDeclarationOnly": true,
+    "declaration": true,
     "composite": true,
-    "types": ["@types/node", "@alwatr/nano-build", "@alwatr/type-helper"]
+    "declarationMap": true,
+    "types": ["node", "@alwatr/nano-build", "@alwatr/type-helper"]
   },
   "include": ["src/**/*.ts"],
   "references": []
