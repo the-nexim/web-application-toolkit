@@ -11,7 +11,7 @@ import {generateServiceWorker} from './workbox.js';
 /**
  * Configures Eleventy with nexim app specification and html minify, postcss, workbox, etc.
  *
- * @param eleventyConfig - The eleventy config
+ * @param {any} eleventyConfig - The eleventy config
  * @returns The eleventyConfig return type
  *
  * @see https://www.11ty.dev/docs/config/

@@ -8,6 +8,7 @@ import postcss from 'postcss';
 import postcssImport from 'postcss-import';
 import postcssPresetEnv from 'postcss-preset-env';
 import postcssVariableCompress from 'postcss-variable-compress';
+// @ts-ignore
 import postcssViewportUnitFallback from 'postcss-viewport-unit-fallback';
 import tailwindcss from 'tailwindcss';
 import postcssNesting from 'tailwindcss/nesting/index.js';
