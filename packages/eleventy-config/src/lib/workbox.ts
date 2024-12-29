@@ -1,21 +1,27 @@
 import {writeFile} from 'fs/promises';
-import {platformInfo} from '@alwatr/platform-info'
-import {generateSW} from 'workbox-build';
+
+import {platformInfo} from '@alwatr/platform-info';
+import {generateSW, type BuildResult} from 'workbox-build';
 
 import {logger} from './logger.js';
 
 const deploymentServiceWorkerContent = "console.log('service worker not build in deployment.')";
 const serviceWorkerDest = 'dist/service-worker.js';
 
-export function generateServiceWorker() {
-  if (platformInfo.development !== true) {
-    logger.logMethodArgs?.('generateServiceWorker', {mode: 'deployment'});
-    return writeFile(serviceWorkerDest, deploymentServiceWorkerContent);
+export async function generateServiceWorker(): Promise<BuildResult | null> {
+  const isDevelopment = platformInfo.development === true;
+  logger.logMethodArgs?.('generateServiceWorker', {isDevelopment});
+
+  if (isDevelopment === true) {
+    await writeFile(serviceWorkerDest, deploymentServiceWorkerContent);
+    return null;
   }
 
-  logger.logMethodArgs?.('generateServiceWorker', {mode: 'production'});
-  return generateSW({
+  const buildResult = await generateSW({
     globDirectory: 'dist',
+    maximumFileSizeToCacheInBytes: 1 * 1024 * 1024, // 1MB
+    cleanupOutdatedCaches: true,
+    inlineWorkboxRuntime: false,
     clientsClaim: true,
     skipWaiting: true,
     globPatterns: ['**/*.{woff,woff2,js,css,webmanifest,html}', 'index.html', 'favicon.ico'],
@@ -58,4 +64,8 @@ export function generateServiceWorker() {
       },
     ],
   });
+
+  const preCacheSize = Math.floor(buildResult.size / 1024);
+  logger.logOther?.(`Generated a service worker, which will pre-cache ${buildResult.count} files, totaling ${preCacheSize}kb.`);
+  return buildResult;
 }

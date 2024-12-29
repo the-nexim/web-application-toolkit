@@ -10,6 +10,6 @@
     "declarationMap": true,
     "types": ["node", "@alwatr/nano-build", "@alwatr/type-helper"]
   },
-  "include": ["src/**/*.js"],
+  "include": ["src/**/*.js", "src/**/*.ts"],
   "references": []
 }

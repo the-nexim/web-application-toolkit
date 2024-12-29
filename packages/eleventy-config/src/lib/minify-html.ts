@@ -1,11 +1,8 @@
-import {minify} from '@swc/html';
+import {minify, type Options} from '@swc/html';
 
 import {logger} from './logger.js';
 
-/**
- * @type {import("@swc/html").Options}
- */
-const swcHtmlOptions = {
+const swcHtmlOptions: Options = {
   forceSetHtml5Doctype: true,
   quotes: true,
   collapseWhitespaces: 'smart',
@@ -22,20 +19,20 @@ const swcHtmlOptions = {
   tagOmission: false,
   selfClosingVoidElements: true,
   sortSpaceSeparatedAttributeValues: false,
+  minifyJson: true,
 };
 
 /**
  * Minify the html
- *
- * @this {any}
- * @param {string} content - File content
  */
-export async function minifyHtml(content) {
-  if (!this.page.outputPath || !this.page.outputPath.endsWith('.html')) return content;
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+export async function minifyHtml(this: any, content: string): Promise<string> {
+  if (!this.page.outputPath || !this.page.outputPath.endsWith('.html')) return content; // not doing anything
+
   logger.logMethodArgs?.('minifyHtml', {path: this.page.outputPath});
 
   try {
-    const result = await minify(Buffer.from(content), swcHtmlOptions);
+    const result = await minify(content, swcHtmlOptions);
     return result.code;
   }
   catch (err) {

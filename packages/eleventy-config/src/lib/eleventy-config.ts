@@ -9,9 +9,9 @@ import {trim} from './util/trim.js';
 import {generateServiceWorker} from './workbox.js';
 
 /**
- * Configures Eleventy with nexim app specification and html minify, postcss, workbox, etc.
+ * Configures Eleventy with nexi app specification and html minify, postcss, workbox, etc.
  *
- * @param {any} eleventyConfig - The eleventy config
+ * @param eleventyConfig - The eleventy config
  * @returns The eleventyConfig return type
  *
  * @see https://www.11ty.dev/docs/config/
@@ -24,8 +24,8 @@ import {generateServiceWorker} from './workbox.js';
  *   return eleventyConfiguration(eleventyConfig);
  * }
  */
-export function eleventyConfiguration(eleventyConfig) {
-
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+export function eleventyConfiguration(eleventyConfig: any) {
   eleventyConfig.addPassthroughCopy({
     assets: '/',
     'assets/img/meta/favicon.ico': '/favicon.ico',
@@ -51,7 +51,7 @@ export function eleventyConfiguration(eleventyConfig) {
   /**
    * Set markdown parser
    */
-  let markdownLibrary = markdownIt({html: true, breaks: true, linkify: true})
+  const markdownLibrary = markdownIt({html: true, breaks: true, linkify: true})
     .use(markdownItAttrs) // required for enter manual set id for header
     .use(markdownItAnchor, {
       permalink: markdownItAnchor.permalink.headerLink(), // this can change create link mode

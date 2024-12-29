@@ -26,16 +26,16 @@
   ],
   "type": "module",
   "main": "./dist/main.mjs",
-  "scripts": {
-    "build": "wireit",
-    "test": "wireit",
-    "watch": "wireit"
-  },
   "files": [
     "**/*.{js,mjs,cjs,map,d.ts,html,md,LEGAL.txt}",
     "LICENSE",
     "!**/*.test.js"
   ],
+  "scripts": {
+    "build": "wireit",
+    "test": "wireit",
+    "watch": "wireit"
+  },
   "dependencies": {
     "@11ty/eleventy": "^3.0.0",
     "@11ty/eleventy-plugin-directory-output": "^1.0.1",
@@ -75,11 +75,6 @@
   },
   "publishConfig": {
     "access": "public"
-  },
-  "nano-build": {
-    "entryPoints": [
-      "src/main.js"
-    ]
   },
   "wireit": {
     "test": {
