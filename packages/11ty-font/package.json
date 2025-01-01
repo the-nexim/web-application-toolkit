@@ -46,10 +46,10 @@
   },
   "dependencies": {
     "@alwatr/logger": "^5.0.0",
-    "@alwatr/package-tracer": "^5.0.0"
+    "@alwatr/package-tracer": "^5.0.0",
+    "@alwatr/font": "^1.2.0"
   },
   "devDependencies": {
-    "@alwatr/font": "^1.2.0",
     "@alwatr/nano-build": "^5.0.0",
     "@alwatr/type-helper": "^5.0.0",
     "@nexim/typescript-config": "^1.0.1",
