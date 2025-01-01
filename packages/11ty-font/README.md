@@ -1,7 +1,6 @@
 # @nexim/11ty-font
 
 ![NPM Version](https://img.shields.io/npm/v/@nexim/11ty-font)
-![npm bundle size](https://img.shields.io/bundlephobia/min/@nexim/11ty-font)
 ![Build & Lint & Test](https://github.com/the-nexim/web-application-toolkit/actions/workflows/build-lint-test.yaml/badge.svg)
 ![NPM Downloads](https://img.shields.io/npm/dm/@nexim/11ty-font)
 ![NPM License](https://img.shields.io/npm/l/@nexim/11ty-font)
