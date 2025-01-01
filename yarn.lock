@@ -192,6 +192,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@alwatr/font@npm:^1.2.0":
+  version: 1.2.0
+  resolution: "@alwatr/font@npm:1.2.0"
+  checksum: 10c0/c35e86db254d16a5945dde7bacac27f620efc82845d4c21677401baebf46412456a5f0d8eeab07a4dca191ec6b3dcc10c11aa0d7c187046f40161ae398ac3031
+  languageName: node
+  linkType: hard
+
 "@alwatr/logger@npm:^5.0.0":
   version: 5.0.0
   resolution: "@alwatr/logger@npm:5.0.0"
@@ -2515,18 +2522,16 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@nexim/11ty-font@workspace:packages/11ty-font"
   dependencies:
+    "@alwatr/font": "npm:^1.2.0"
     "@alwatr/logger": "npm:^5.0.0"
     "@alwatr/nano-build": "npm:^5.0.0"
     "@alwatr/package-tracer": "npm:^5.0.0"
-    "@alwatr/platform-info": "npm:^5.0.0"
     "@alwatr/type-helper": "npm:^5.0.0"
     "@nexim/typescript-config": "npm:^1.0.1"
     "@types/node": "npm:^22.10.2"
     ava: "npm:^6.2.0"
     typescript: "npm:^5.7.2"
     wireit: "npm:^0.14.9"
-  peerDependencies:
-    "@11ty/eleventy": ^3.0.0
   languageName: unknown
   linkType: soft
 

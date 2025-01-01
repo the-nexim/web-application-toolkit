@@ -46,10 +46,10 @@
   },
   "dependencies": {
     "@alwatr/logger": "^5.0.0",
-    "@alwatr/package-tracer": "^5.0.0",
-    "@alwatr/platform-info": "^5.0.0"
+    "@alwatr/package-tracer": "^5.0.0"
   },
   "devDependencies": {
+    "@alwatr/font": "^1.2.0",
     "@alwatr/nano-build": "^5.0.0",
     "@alwatr/type-helper": "^5.0.0",
     "@nexim/typescript-config": "^1.0.1",
@@ -57,9 +57,6 @@
     "ava": "^6.2.0",
     "typescript": "^5.7.2",
     "wireit": "^0.14.9"
-  },
-  "peerDependencies": {
-    "@11ty/eleventy": "^3.0.0"
   },
   "publishConfig": {
     "access": "public"
