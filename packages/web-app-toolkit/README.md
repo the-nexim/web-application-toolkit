@@ -1,9 +1,9 @@
 # @nexim/web-app-toolkit
 
-![NPM Version](https://img.shields.io/npm/v/%40nexim%2Eweb-app-toolkit)
+![NPM Version](https://img.shields.io/npm/v/@nexim/web-app-toolkit)
 ![Build & Lint & Test](https://github.com/the-nexim/web-app-toolkit/actions/workflows/build-lint-test.yaml/badge.svg)
-![NPM Downloads](https://img.shields.io/npm/dm/%40nexim%2Eweb-app-toolkit)
-![NPM License](https://img.shields.io/npm/l/%40nexim%2Eweb-app-toolkit)
+![NPM Downloads](https://img.shields.io/npm/dm/@nexim/web-app-toolkit)
+![NPM License](https://img.shields.io/npm/l/@nexim/web-app-toolkit)
 
 ## Overview
 
