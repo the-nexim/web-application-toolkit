@@ -30,6 +30,5 @@ Create a directory for your selected font and paste the font files into it with 
 ```ts
 import configFont from '@nexim/11ty-font';
 
-await configFont({ fontName: 'google', outputDir: 'dist/font', })
-
+await configFont({fontName: 'google', outputDir: 'dist/font'});
 ```
