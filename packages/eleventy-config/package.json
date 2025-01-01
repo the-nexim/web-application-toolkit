@@ -10,13 +10,13 @@
     "typescript",
     "nexim"
   ],
-  "homepage": "https://github.com/the-nexim/web-application-toolkit/tree/next/packages/eleventy-config#readme",
+  "homepage": "https://github.com/the-nexim/web-app-toolkit/tree/next/packages/eleventy-config#readme",
   "bugs": {
-    "url": "https://github.com/the-nexim/web-application-toolkit/issues"
+    "url": "https://github.com/the-nexim/web-app-toolkit/issues"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/the-nexim/web-application-toolkit",
+    "url": "https://github.com/the-nexim/web-app-toolkit",
     "directory": "packages/eleventy-config"
   },
   "license": "AGPL-3.0-only",
@@ -37,8 +37,7 @@
   "types": "./dist/main.d.ts",
   "files": [
     "**/*.{js,mjs,cjs,map,d.ts,html,md,LEGAL.txt}",
-    "LICENSE",
-    "!**/*.test.js"
+    "LICENSE"
   ],
   "scripts": {
     "build": "wireit",

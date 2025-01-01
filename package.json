@@ -1,8 +1,8 @@
 {
-  "name": "application-toolkit-monorepo",
+  "name": "app-toolkit-monorepo",
   "private": true,
   "description": "Necessary library for all ECMAScript (JavaScript/TypeScript) projects.",
-  "repository": "https://github.com/the-nexim/web-application-toolkit",
+  "repository": "https://github.com/the-nexim/web-app-toolkit",
   "license": "AGPL-3.0-only",
   "author": "S. Amir Mohammad Najafi <njfamirm@gmail.com> (https://www.njfamirm.ir)",
   "contributors": [
