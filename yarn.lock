@@ -2595,8 +2595,6 @@ __metadata:
     ava: "npm:^6.2.0"
     typescript: "npm:^5.7.2"
     wireit: "npm:^0.14.9"
-  peerDependencies:
-    "@11ty/eleventy": ^3.0.0
   languageName: unknown
   linkType: soft
 

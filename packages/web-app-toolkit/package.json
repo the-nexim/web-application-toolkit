@@ -6,14 +6,14 @@
     "typescript",
     "nexim"
   ],
-  "homepage": "https://github.com/the-nexim/web-app-toolkit/tree/next/packages/nexim-toolkit#readme",
+  "homepage": "https://github.com/the-nexim/web-app-toolkit/tree/next/packages/web-app-toolkit#readme",
   "bugs": {
     "url": "https://github.com/the-nexim/web-app-toolkit/issues"
   },
   "repository": {
     "type": "git",
     "url": "https://github.com/the-nexim/web-app-toolkit",
-    "directory": "packages/nexim-toolkit"
+    "directory": "packages/web-app-toolkit"
   },
   "license": "AGPL-3.0-only",
   "author": "S. Amir Mohammad Najafi <njfamirm@gmail.com> (https://www.njfamirm.ir)",
@@ -52,9 +52,6 @@
     "ava": "^6.2.0",
     "typescript": "^5.7.2",
     "wireit": "^0.14.9"
-  },
-  "peerDependencies": {
-    "@11ty/eleventy": "^3.0.0"
   },
   "publishConfig": {
     "access": "public"
