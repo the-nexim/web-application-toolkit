@@ -4,8 +4,7 @@
   "description": "An Eleventy tool for seamless font integration, supporting custom fonts from any npm packages with simple configuration.",
   "keywords": [
     "eleventy",
-    "ssg",
-    "jamstack",
+    "Font",
     "config",
     "typescript",
     "nexim"
