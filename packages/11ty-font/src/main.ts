@@ -8,7 +8,7 @@ __dev_mode__: packageTracer.add(__package_name__, __package_version__);
 
 const logger = createLogger(__package_name__);
 
-export async function copyFont({ fontName, outputDir, }: { fontName: string, outputDir: string }) {
+export default  async function copyFont({ fontName, outputDir }: { fontName: string, outputDir: string }) {
   logger.logMethodArgs?.('copyFont(%s)', fontName);
 
   const outDir = join(outputDir!, 'font', fontName);
@@ -22,3 +22,5 @@ export async function copyFont({ fontName, outputDir, }: { fontName: string, out
 
   await cp(fontPath, outDir, {recursive: true, preserveTimestamps: true, force: true});
 }
+
+

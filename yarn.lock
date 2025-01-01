@@ -2511,6 +2511,25 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@nexim/11ty-font@workspace:packages/11ty-font":
+  version: 0.0.0-use.local
+  resolution: "@nexim/11ty-font@workspace:packages/11ty-font"
+  dependencies:
+    "@alwatr/logger": "npm:^5.0.0"
+    "@alwatr/nano-build": "npm:^5.0.0"
+    "@alwatr/package-tracer": "npm:^5.0.0"
+    "@alwatr/platform-info": "npm:^5.0.0"
+    "@alwatr/type-helper": "npm:^5.0.0"
+    "@nexim/typescript-config": "npm:^1.0.1"
+    "@types/node": "npm:^22.10.2"
+    ava: "npm:^6.2.0"
+    typescript: "npm:^5.7.2"
+    wireit: "npm:^0.14.9"
+  peerDependencies:
+    "@11ty/eleventy": ^3.0.0
+  languageName: unknown
+  linkType: soft
+
 "@nexim/eleventy-config@workspace:packages/eleventy-config":
   version: 0.0.0-use.local
   resolution: "@nexim/eleventy-config@workspace:packages/eleventy-config"
@@ -2563,25 +2582,6 @@ __metadata:
   checksum: 10c0/eb4f721ba6a20f7453ab301beef8b5850a95d3076ea1a3ac5911d9b67c09a80cf220adb5e7634eab9c81507f3f5baeec2d5968520d3ffaacc1ab9b6749a2427a
   languageName: node
   linkType: hard
-
-"@nexim/font@workspace:packages/font":
-  version: 0.0.0-use.local
-  resolution: "@nexim/font@workspace:packages/font"
-  dependencies:
-    "@alwatr/logger": "npm:^5.0.0"
-    "@alwatr/nano-build": "npm:^5.0.0"
-    "@alwatr/package-tracer": "npm:^5.0.0"
-    "@alwatr/platform-info": "npm:^5.0.0"
-    "@alwatr/type-helper": "npm:^5.0.0"
-    "@nexim/typescript-config": "npm:^1.0.1"
-    "@types/node": "npm:^22.10.2"
-    ava: "npm:^6.2.0"
-    typescript: "npm:^5.7.2"
-    wireit: "npm:^0.14.9"
-  peerDependencies:
-    "@11ty/eleventy": ^3.0.0
-  languageName: unknown
-  linkType: soft
 
 "@nexim/prettier-config@npm:^1.0.1":
   version: 1.0.1

@@ -1,7 +1,7 @@
 {
   "name": "@nexim/11ty-font",
   "version": "0.0.0",
-  "description": "An optimized, production-ready configuration for the Eleventy static site generator tailored for the Nexim APP Template structure. This setup ensures efficient Eleventy projects by integrating HTML minification, PostCSS processing, service worker generation, and other performance-focused enhancements for scalable and maintainable web applications.",
+  "description": "An Eleventy tool for seamless font integration, supporting custom fonts from any npm packages with simple configuration.",
   "keywords": [
     "eleventy",
     "ssg",
