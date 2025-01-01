@@ -9,6 +9,9 @@
   "references": [
     {
       "path": "./packages/eleventy-config"
+    },
+    {
+      "path": "./packages/web-app-toolkit"
     }
   ]
 }
