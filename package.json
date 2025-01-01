@@ -1,5 +1,5 @@
 {
-  "name": "app-toolkit-monorepo",
+  "name": "web-app-toolkit-monorepo",
   "private": true,
   "description": "Necessary library for all ECMAScript (JavaScript/TypeScript) projects.",
   "repository": "https://github.com/the-nexim/web-app-toolkit",
