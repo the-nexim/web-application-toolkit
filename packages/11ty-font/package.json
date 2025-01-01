@@ -9,14 +9,14 @@
     "typescript",
     "nexim"
   ],
-  "homepage": "https://github.com/the-nexim/web-application-toolkit/tree/next/packages/eleventy-config#readme",
+  "homepage": "https://github.com/the-nexim/web-application-toolkit/tree/next/packages/11ty-font#readme",
   "bugs": {
     "url": "https://github.com/the-nexim/web-application-toolkit/issues"
   },
   "repository": {
     "type": "git",
     "url": "https://github.com/the-nexim/web-application-toolkit",
-    "directory": "packages/eleventy-config"
+    "directory": "packages/11ty-font"
   },
   "license": "AGPL-3.0-only",
   "author": "S. Amir Mohammad Najafi <njfamirm@gmail.com> (https://www.njfamirm.ir)",
@@ -36,8 +36,7 @@
   "types": "./dist/main.d.ts",
   "files": [
     "**/*.{js,mjs,cjs,map,d.ts,html,md,LEGAL.txt}",
-    "LICENSE",
-    "!**/*.test.js"
+    "LICENSE"
   ],
   "scripts": {
     "build": "wireit",

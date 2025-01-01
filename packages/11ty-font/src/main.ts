@@ -8,8 +8,8 @@ __dev_mode__: packageTracer.add(__package_name__, __package_version__);
 
 const logger = createLogger(__package_name__);
 
-export default async function ({fontName, outputDir}: {fontName: string; outputDir: string}) {
-  logger.logMethodArgs?.('11ty-font(%s)', fontName);
+export default async function (fontName: string, outputDir: string): Promise<void> {
+  logger.logMethodArgs?.('font-name: ', fontName);
 
   const outDir = join(outputDir, 'font', fontName);
   await mkdir(outDir, {recursive: true});
@@ -18,7 +18,7 @@ export default async function ({fontName, outputDir}: {fontName: string; outputD
   fontPath = dirname(fontPath);
   fontPath = join(fontPath, fontName);
 
-  logger.logMethodArgs?.('11ty-font(%s)', fontName);
+  logger.logMethodArgs?.('copy-font-to: ', fontPath);
 
   await cp(fontPath, outDir, {recursive: true, preserveTimestamps: true, force: true});
 }
