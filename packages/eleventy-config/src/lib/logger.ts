@@ -1,3 +1,3 @@
 import {createLogger} from '@alwatr/logger';
 
-export const logger = createLogger(__package_name__);
+export const logger = /* @__PURE__ */ createLogger(__package_name__);
