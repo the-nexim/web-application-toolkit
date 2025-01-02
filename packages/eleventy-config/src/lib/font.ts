@@ -21,7 +21,7 @@ export async function copyFont(fontName: string, outputDirectory: string): Promi
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 export function eleventyCopyFont(eleventyConfig: any, fontName: string) {
-  eleventyConfig.on('eleventy.before', ({runMode}) => {
+  eleventyConfig.on('eleventy.before', ({runMode}: {runMode: string}) => {
     if (runMode )
       copyFont(fontName, 'dist/fonts');
   })
