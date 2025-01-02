@@ -44,9 +44,9 @@
     "watch": "wireit"
   },
   "dependencies": {
+    "@alwatr/font": "^1.2.0",
     "@alwatr/logger": "^5.0.0",
-    "@alwatr/package-tracer": "^5.0.0",
-    "@alwatr/font": "^1.2.0"
+    "@alwatr/package-tracer": "^5.0.0"
   },
   "devDependencies": {
     "@alwatr/nano-build": "^5.0.0",

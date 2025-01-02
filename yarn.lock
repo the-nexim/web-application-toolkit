@@ -2518,7 +2518,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-
 "@nexim/11ty-font@workspace:packages/11ty-font":
   version: 0.0.0-use.local
   resolution: "@nexim/11ty-font@workspace:packages/11ty-font"
@@ -2535,7 +2534,6 @@ __metadata:
     wireit: "npm:^0.14.9"
   languageName: unknown
   linkType: soft
-
 
 "@nexim/eleventy-config@workspace:^, @nexim/eleventy-config@workspace:packages/eleventy-config":
   version: 0.0.0-use.local

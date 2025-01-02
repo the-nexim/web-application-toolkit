@@ -1,12 +1,7 @@
 import {mkdir, cp} from 'fs/promises';
 import {dirname, join} from 'path';
 
-import {createLogger} from '@alwatr/logger';
-import {packageTracer} from '@alwatr/package-tracer';
-
-__dev_mode__: packageTracer.add(__package_name__, __package_version__);
-
-const logger = createLogger(__package_name__);
+import {logger} from './logger.js';
 
 export async function copyFont(fontName: string, outputDirectory: string): Promise<void> {
   logger.logMethodArgs?.('copyFont', {fontName, outputDir: outputDirectory});
@@ -22,4 +17,12 @@ export async function copyFont(fontName: string, outputDirectory: string): Promi
   await cp(fontPath, resolvedOutputDirectory, {recursive: true, preserveTimestamps: true, force: true});
 
   logger.logStep?.('copyFont', 'copy-font', {resolvedOutputDirectory});
+}
+
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+export function eleventyCopyFont(eleventyConfig: any, fontName: string) {
+  eleventyConfig.on('eleventy.before', ({runMode}) => {
+    if (runMode )
+      copyFont(fontName, 'dist/fonts');
+  })
 }
