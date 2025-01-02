@@ -26,7 +26,9 @@ yarn add @nexim/eleventy-config
 
 Configures Eleventy with nexim app specification and html minify, postcss, workbox, etc.
 
-```ts
+```js
+// eleventy.config.mjs
+
 import {eleventyConfiguration} from '@nexim/eleventy-config';
 
 export default function (eleventyConfig) {
@@ -35,6 +37,21 @@ export default function (eleventyConfig) {
 ```
 
 > Returning the `eleventyConfiguration` function is necessary to ensure the configuration is applied to the Eleventy instance.
+
+### eleventyCopyFontPlugin
+
+Eleventy plugin to copy a font before the build process.
+
+```js
+// eleventy.config.mjs
+
+import {eleventyCopyFontPlugin} from '@nexim/eleventy-config';
+
+export default function (eleventyConfig) {
+  eleventyConfig.addPlugin(eleventyCopyFontPlugin, {fontName: 'vazirmatn'});
+  // ...
+}
+```
 
 ## TODO
 
