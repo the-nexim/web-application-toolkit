@@ -27,7 +27,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        language: ['TypeScript']
+        language: ['TypeScript', 'JavaScript']
         # Learn more about CodeQL language support at https://aka.ms/codeql-docs/language-support
 
     steps:

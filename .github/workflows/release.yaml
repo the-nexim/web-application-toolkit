@@ -22,6 +22,7 @@ jobs:
         uses: actions/checkout@v4
         with:
           fetch-depth: 0
+          token: ${{ secrets.BOT_TOKEN }}
 
       - name: 🙂‍↔️ Import GPG key
         run: |
@@ -32,8 +33,8 @@ jobs:
 
       - name: 🫡 Setup Git
         run: |
-          git config --global user.name "njfamirm-bot"
-          git config --global user.email "bot@njfamirm.ir"
+          git config --global user.name "Nexim Bot"
+          git config --global user.email "bot@thenexim.com"
           git config --global user.signingkey ${{ env.GPG_KEY_ID }}
           git config --global commit.gpgsign true
 
@@ -62,14 +63,21 @@ jobs:
 
       - name: 🚀 Build Typescript
         run: yarn build
+        env:
+          WIREIT_LOGGER: metrics
 
       - name: 🚀 Run ESLint
         run: yarn lint
+        env:
+          WIREIT_LOGGER: metrics
 
       - name: 🧪 Run Test
         run: yarn test
+        env:
+          WIREIT_LOGGER: metrics
 
       - name: 🤖 Get Release
-        run: yarn release -y
+        run: yarn lerna version --yes
         env:
           GITHUB_TOKEN: ${{ secrets.BOT_TOKEN }}
+          WIREIT_LOGGER: metrics
