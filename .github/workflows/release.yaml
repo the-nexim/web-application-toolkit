@@ -11,73 +11,12 @@ env:
 
 jobs:
   main:
-    name: Build & Lint & Test & Release
-    runs-on: ubuntu-latest
-
+    uses: the-nexim/actions/.github/workflows/release.yaml@v1
     permissions:
-      contents: write
-
-    steps:
-      - name: ⤵️ Checkout repository
-        uses: actions/checkout@v4
-        with:
-          fetch-depth: 0
-          token: ${{ secrets.BOT_TOKEN }}
-
-      - name: 🙂‍↔️ Import GPG key
-        run: |
-          echo "${{ secrets.GPG_PRIVATE_KEY }}" | gpg --batch --import
-          echo -e "5\ny\n" | gpg --batch --yes --command-fd 0 --edit-key ${{ env.GPG_KEY_ID }} trust quit
-        env:
-          GPG_PRIVATE_KEY: ${{ secrets.GPG_PRIVATE_KEY }}
-
-      - name: 🫡 Setup Git
-        run: |
-          git config --global user.name "Nexim Bot"
-          git config --global user.email "bot@thenexim.com"
-          git config --global user.signingkey ${{ env.GPG_KEY_ID }}
-          git config --global commit.gpgsign true
-
-      - name: 🏗 Setup nodejs
-        uses: actions/setup-node@v4
-        with:
-          node-version: ${{ env.NODE_VERSION }}
-
-      - name: 🏗 Setup nodejs corepack
-        run: corepack enable
-
-      - name: 🏗 Get yarn config
-        id: yarn_config
-        run: echo "cache_folder=$(yarn config get cacheFolder)" >> $GITHUB_OUTPUT
-
-      - name: 🏗 Cache Layer
-        uses: actions/cache@v4
-        with:
-          path: ${{ steps.yarn_config.outputs.cache_folder }}
-          key: ${{ runner.os }}-yarn-${{ hashFiles('yarn.lock') }}
-          restore-keys: |
-            ${{ runner.os }}-yarn-
-
-      - name: 🏗 Install dependencies
-        run: yarn install --immutable
-
-      - name: 🚀 Build Typescript
-        run: yarn build
-        env:
-          WIREIT_LOGGER: metrics
-
-      - name: 🚀 Run ESLint
-        run: yarn lint
-        env:
-          WIREIT_LOGGER: metrics
-
-      - name: 🧪 Run Test
-        run: yarn test
-        env:
-          WIREIT_LOGGER: metrics
-
-      - name: 🤖 Get Release
-        run: yarn lerna version --yes
-        env:
-          GITHUB_TOKEN: ${{ secrets.BOT_TOKEN }}
-          WIREIT_LOGGER: metrics
+      contents: read
+    with:
+      NODE_VERSION: lts/*
+    secrets:
+      GPG_PRIVATE_KEY: ${{ secrets.GPG_PRIVATE_KEY }}
+      GPG_KEY_ID: ${{ secrets.GPG_KEY_ID }}
+      BOT_TOKEN: ${{ secrets.BOT_TOKEN }}

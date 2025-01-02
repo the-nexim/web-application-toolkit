@@ -13,53 +13,12 @@ env:
   NODE_VERSION: lts/*
 
 jobs:
-  publish-npm:
-    if: github.repository_owner == 'the-nexim'
-
-    name: Publish NPM
-    runs-on: ubuntu-latest
-
+  main:
+    uses: the-nexim/actions/.github/workflows/publish-npm.yml@v1
     permissions:
       contents: read
       id-token: write
-
-    steps:
-      - name: ⤵️ Checkout repository
-        uses: actions/checkout@v4
-
-      - name: 🏗 Setup nodejs
-        uses: actions/setup-node@v4
-        with:
-          node-version: ${{ env.NODE_VERSION }}
-          registry-url: 'https://registry.npmjs.org'
-
-      - name: 🏗 Setup nodejs corepack
-        run: corepack enable
-
-      - name: 🏗 Get yarn config
-        id: yarn_config
-        run: echo "cache_folder=$(yarn config get cacheFolder)" >> $GITHUB_OUTPUT
-
-      - name: 🏗 Cache Layer
-        uses: actions/cache@v4
-        with:
-          path: ${{ steps.yarn_config.outputs.cache_folder }}
-          key: ${{ runner.os }}-yarn-${{ hashFiles('yarn.lock') }}
-          restore-keys: |
-            ${{ runner.os }}-yarn-
-
-      - name: 🏗 Install dependencies
-        run: yarn install --immutable
-
-      - name: 🏗 Build
-        run: yarn build
-        env:
-          NODE_ENV: production
-          WIREIT_LOGGER: metrics
-
-      - name: 🚀 Publish
-        run: yarn run publish -- --yes
-        env:
-          NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}
-          NPM_CONFIG_PROVENANCE: true
-          WIREIT_LOGGER: metrics
+    with:
+      node-version: lts/*
+    secrets:
+      NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
