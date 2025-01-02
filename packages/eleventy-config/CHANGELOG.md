@@ -3,6 +3,16 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.1.0](https://github.com/the-nexim/web-app-toolkit/compare/@nexim/eleventy-config@1.0.0...@nexim/eleventy-config@1.1.0) (2025-01-02)
+
+### Features
+
+* **eleventy-config:** copy alwatr font plugin ([7020533](https://github.com/the-nexim/web-app-toolkit/commit/70205331d2e4a2ef131be6ce441839afb088378f)) by @njfamirm
+
+### Bug Fixes
+
+* **eleventy-config:** mark logger as side effect free ([1da0af5](https://github.com/the-nexim/web-app-toolkit/commit/1da0af51596f5afe022c16ce9c1a6f4aa2f85b34)) by @njfamirm
+
 ## 1.0.0 (2024-12-29)
 
 ### ⚠ BREAKING CHANGES

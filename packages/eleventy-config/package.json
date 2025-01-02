@@ -1,6 +1,6 @@
 {
   "name": "@nexim/eleventy-config",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "An optimized, production-ready configuration for the Eleventy static site generator tailored for the Nexim APP Template structure. This setup ensures efficient Eleventy projects by integrating HTML minification, PostCSS processing, service worker generation, and other performance-focused enhancements for scalable and maintainable web applications.",
   "keywords": [
     "eleventy",
