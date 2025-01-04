@@ -1,13 +1,13 @@
 import {l10n} from '@alwatr/i18n';
-import { serviceWorkerSignal } from '@nexim/service-worker';
+import {serviceWorkerSignal} from '@nexim/service-worker';
+import {snackbarSignal} from '@nexim/snackbar';
 
-import {logger} from './logger.js';
-import {snackbarSignal} from './signal.js';
-import {isVersionLarger} from './utils.js';
+import { logger } from './logger.js';
+import { isVersionLarger } from './toolkit.js';
 
 const notifyLocalStorageKey = 'notify_new_version';
 
-export function serviceWorkerNotifyHandler(options: {lastNotifyVersion: string; changelogPage?: string}): void {
+export function serviceWorkerNotifySnackbar(options: {lastNotifyVersion: string; changelogPage?: string}): void {
   logger.logMethodArgs?.('serviceWorkerNotifyHandler', {options});
 
   serviceWorkerSignal.subscribe(({event}) => {
@@ -24,15 +24,15 @@ export function serviceWorkerNotifyHandler(options: {lastNotifyVersion: string; 
       return;
     }
     else if (event === 'service_worker_registered') {
-      const lastVersion = localStorage.getItem(notifyLocalStorageKey);
-      if (lastVersion !== null) {
+      const lastLocalVersion = localStorage.getItem(notifyLocalStorageKey);
+      if (lastLocalVersion !== null) {
         localStorage.removeItem(notifyLocalStorageKey);
         const message = `به نسخه ${l10n.replaceNumber(__package_version__.replace('-alpha', '-آلفا'))} خوش‌آمدید.`;
 
         if (
           (options.changelogPage != null && options.lastNotifyVersion === __package_version__) ||
-          lastVersion === '' ||
-          isVersionLarger(options.lastNotifyVersion, lastVersion)
+          lastLocalVersion === '' ||
+          isVersionLarger(options.lastNotifyVersion, lastLocalVersion)
         ) {
           snackbarSignal.notify({
             content: message,

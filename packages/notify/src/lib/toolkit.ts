@@ -17,7 +17,6 @@ export function isVersionLarger(currentVersion: string, otherVersion: string) {
   return false;
 }
 
-
 /**
  * Running code immediately after a repaint maximizes the chance that the DOM has been fully calculated.
  * This minimizes the chance that querying the DOM will cause a costly reflow.
