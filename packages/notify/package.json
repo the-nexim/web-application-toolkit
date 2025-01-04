@@ -1,21 +1,21 @@
 {
   "name": "@nexim/notify",
   "version": "0.0.0",
-  "description": "Snackbar component with signal capability.",
+  "description": "Snackbar Notify component with signal capability.",
   "keywords": [
     "snackbar",
     "notification",
-    "web-component",
+    "notify",
     "typescript",
     "nexim"
   ],
-  "homepage": "https://github.com/the-nexim/design-system/tree/next/packages/snackbar#readme",
+  "homepage": "https://github.com/the-nexim/web-app-toolkit/tree/next/packages/notify#readme",
   "bugs": {
-    "url": "https://github.com/the-nexim/design-system/issues"
+    "url": "https://github.com/the-nexim/web-app-toolkit/issues"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/the-nexim/design-system",
+    "url": "https://github.com/the-nexim/web-app-toolkit",
     "directory": "packages/snackbar"
   },
   "license": "AGPL-3.0-only",
