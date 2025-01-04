@@ -10,5 +10,6 @@ on:
 jobs:
   main:
     uses: the-nexim/actions/.github/workflows/dependency-review.yaml@v1
+
     permissions:
       contents: read

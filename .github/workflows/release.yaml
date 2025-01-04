@@ -5,18 +5,17 @@ name: Build & Lint & Test & Release
 on:
   workflow_dispatch:
 
-env:
-  NODE_VERSION: lts/*
-  GPG_KEY_ID: ${{ vars.GPG_KEY_ID }}
-
 jobs:
   main:
     uses: the-nexim/actions/.github/workflows/release.yaml@v1
+
     permissions:
-      contents: read
+      contents: write
+
     with:
-      NODE_VERSION: lts/*
+      node-version: lts/*
+
     secrets:
-      GPG_PRIVATE_KEY: ${{ secrets.GPG_PRIVATE_KEY }}
+      RELEASER_ACCOUNT_TOKEN: ${{ secrets.BOT_TOKEN }}
       GPG_KEY_ID: ${{ secrets.GPG_KEY_ID }}
-      BOT_TOKEN: ${{ secrets.BOT_TOKEN }}
+      GPG_PRIVATE_KEY: ${{ secrets.GPG_PRIVATE_KEY }}

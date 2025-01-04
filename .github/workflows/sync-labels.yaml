@@ -4,14 +4,18 @@ name: Sync labels
 
 on:
   workflow_dispatch:
+
   push:
     branches:
       - next
     paths:
-      - .github/labels.yml
+      - .github/labels.yaml
+      - .github/sync-labels.yml
 
 jobs:
   main:
-    uses: the-nexim/actions/.github/workflows/sync-labels.yml@v1
-    secrets:
-      GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+    uses: the-nexim/actions/.github/workflows/sync-label.yaml@v1
+
+    permissions:
+      contents: read
+      issues: write

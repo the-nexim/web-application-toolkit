@@ -9,16 +9,16 @@ on:
     types:
       - created
 
-env:
-  NODE_VERSION: lts/*
-
 jobs:
   main:
-    uses: the-nexim/actions/.github/workflows/publish-npm.yml@v1
+    uses: the-nexim/actions/.github/workflows/publish-npm.yaml@v1
+
     permissions:
       contents: read
       id-token: write
+
     with:
       node-version: lts/*
+
     secrets:
       NPM_TOKEN: ${{ secrets.NPM_TOKEN }}

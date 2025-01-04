@@ -1,4 +1,7 @@
 # yaml-language-server: $schema=https://json.schemastore.org/github-workflow.json
+
+name: Build & Lint & Test
+
 on:
   workflow_dispatch:
 
@@ -11,6 +14,9 @@ on:
 jobs:
   main:
     uses: the-nexim/actions/.github/workflows/build-lint-test.yaml@v1
+
+    permissions:
+      contents: read
+
     with:
-      node-version: 22.11.0
-    secrets: inherit
+      node-version: lts/*
