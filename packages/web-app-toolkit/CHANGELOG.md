@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.0.2](https://github.com/the-nexim/web-app-toolkit/compare/@nexim/web-app-toolkit@1.0.1...@nexim/web-app-toolkit@1.0.2) (2025-01-04)
+
+### Code Refactoring
+
+* **service-worker-notify:** update package name ([#11](https://github.com/the-nexim/web-app-toolkit/issues/11)) ([2373b9e](https://github.com/the-nexim/web-app-toolkit/commit/2373b9ef25ce67138443913f7d5711ef510c248a)) by @
+
 ## [1.0.1](https://github.com/the-nexim/web-app-toolkit/compare/@nexim/web-app-toolkit@1.0.0...@nexim/web-app-toolkit@1.0.1) (2025-01-02)
 
 **Note:** Version bump only for package @nexim/web-app-toolkit
