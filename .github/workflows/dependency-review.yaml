@@ -8,16 +8,8 @@ on:
   pull_request:
 
 jobs:
-  dependency-review:
-    name: Dependency Review
-    runs-on: ubuntu-latest
+  main:
+    uses: the-nexim/actions/.github/workflows/dependency-review.yaml@v1
 
     permissions:
       contents: read
-
-    steps:
-      - name: ⤵️ Checkout repository
-        uses: actions/checkout@v4
-
-      - name: 🚀 Dependency Review
-        uses: actions/dependency-review-action@v4
