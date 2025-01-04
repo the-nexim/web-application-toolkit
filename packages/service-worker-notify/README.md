@@ -32,6 +32,6 @@ import {serviceWorkerNotifySnackbar} from '@nexim/service-worker-notify';
 
 serviceWorkerNotifyHandler({
   lastNotifyVersion,
-  changelogPage: 'https://example.com/changelog' || '/changelog/'
+  changelogPage: 'https://example.com/changelog' || '/changelog/',
 });
 ```

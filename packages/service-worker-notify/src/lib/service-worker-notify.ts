@@ -35,19 +35,19 @@ export function serviceWorkerNotifySnackbar(options: {lastNotifyVersion: string;
         duration: -1,
       });
     }
-    /**
-     * Handles the 'service_worker_first_install' event.
-     * No action is taken for better UX.
-     */
     else if (event === 'service_worker_first_install') {
+      /**
+       * Handles the 'service_worker_first_install' event.
+       * No action is taken for better UX.
+       */
       // nothing for better UX
       return;
     }
-    /**
-     * Handles the 'service_worker_registered' event.
-     * Displays a welcome message if the version is new or updated.
-     */
     else if (event === 'service_worker_registered') {
+      /**
+       * Handles the 'service_worker_registered' event.
+       * Displays a welcome message if the version is new or updated.
+       */
       const lastLocalVersion = localStorage.getItem(notifyLocalStorageKey);
       if (lastLocalVersion !== null) {
         localStorage.removeItem(notifyLocalStorageKey);
@@ -86,20 +86,20 @@ export function serviceWorkerNotifySnackbar(options: {lastNotifyVersion: string;
         }
       }
     }
-    /**
-     * Handles the 'service_worker_installed' event.
-     * Displays a snackbar notification indicating the app is now available offline.
-     */
     else if (event === 'service_worker_installed') {
+      /**
+       * Handles the 'service_worker_installed' event.
+       * Displays a snackbar notification indicating the app is now available offline.
+       */
       snackbarSignal.notify({
         content: 'برنامه نصب شد و اکنون به صورت آفلاین در دسترس است.',
       });
     }
-    /**
-     * Handles the 'service_worker_updated' event.
-     * Displays a snackbar notification indicating the update is complete and provides a reload action.
-     */
     else if (event === 'service_worker_updated') {
+      /**
+       * Handles the 'service_worker_updated' event.
+       * Displays a snackbar notification indicating the update is complete and provides a reload action.
+       */
       localStorage.setItem(notifyLocalStorageKey, __package_version__);
       snackbarSignal.notify({
         content: 'به روز رسانی انجام شد.',
