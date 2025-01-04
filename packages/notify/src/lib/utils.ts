@@ -1,33 +1,8 @@
-import {localJsonStorage} from '@alwatr/local-storage';
-import { random } from '@alwatr/math';
 import {waitForAnimationFrame, waitForTimeout} from '@alwatr/wait';
+import {LightDomMixin, LoggerMixin} from '@nexim/element';
+import {LitElement} from 'lit';
 
 import {logger} from './logger.js';
-
-/**
- * Set `debug` to `1` if `debugMode` is `true` in debug mode
- */
-export function devMode() {
-  logger.logMethod?.('devMode');
-  localStorage.setItem('ALWATR_DEBUG', '1');
-  localStorage.setItem('debug', '1'); // old logger
-  localStorage.setItem('alwatrDebug', '1'); // old logger
-  location.reload();
-}
-
-/**
- * Get device id.
- *
- * If not exists, generate a new one and save it.
- */
-export function getDeviceId(): string {
-  let {id: deviceId} = localJsonStorage.getItem<{id: string | null}>('device_id', {id: null}, 0);
-  if (deviceId == null) {
-    deviceId = random.uuid;
-    localJsonStorage.setItem('device_id', {id: deviceId}, 0);
-  }
-  return deviceId;
-}
 
 export function isVersionLarger(currentVersion: string, otherVersion: string) {
   logger.logMethodArgs?.('isVersionLarger', {currentVersion, otherVersion});
@@ -64,3 +39,5 @@ export function waitForNextFrame(): Promise<void> {
     });
   });
 }
+
+export const BaseElement = LightDomMixin(LoggerMixin(LitElement));

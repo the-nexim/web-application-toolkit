@@ -4,7 +4,7 @@ import {waitForTimeout} from '@alwatr/wait';
 
 import type {SnackbarComponent} from './element.js';
 
-const logger = createLogger('common/snackbar');
+const logger = createLogger(`${__package_name__}/snackbar`);
 
 /**
  * Options for configuring the snackbar.
