@@ -2,8 +2,7 @@ import {l10n} from '@alwatr/i18n';
 import {serviceWorkerSignal} from '@nexim/service-worker';
 import {snackbarSignal} from '@nexim/snackbar';
 
-import { logger } from './logger.js';
-import { isVersionLarger } from './toolkit.js';
+import {logger, isVersionLarger} from './toolkit.js';
 
 const notifyLocalStorageKey = 'notify_new_version';
 

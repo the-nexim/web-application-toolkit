@@ -1,8 +1,9 @@
+import {createLogger} from '@alwatr/logger';
 import {waitForAnimationFrame, waitForTimeout} from '@alwatr/wait';
 import {LightDomMixin, LoggerMixin} from '@nexim/element';
 import {LitElement} from 'lit';
 
-import {logger} from './logger.js';
+export const logger = /* @__PURE__ */ createLogger('common/service-worker');
 
 export function isVersionLarger(currentVersion: string, otherVersion: string) {
   logger.logMethodArgs?.('isVersionLarger', {currentVersion, otherVersion});
