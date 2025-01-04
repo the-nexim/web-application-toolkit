@@ -43,6 +43,7 @@
   "dependencies": {
     "@alwatr/package-tracer": "^5.0.0",
     "@nexim/eleventy-config": "workspace:^",
+    "@nexim/pwa-install-prompt": "workspace:^",
     "@nexim/service-worker-notify": "workspace:^"
   },
   "devDependencies": {
