@@ -3020,9 +3020,20 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@nexim/notify@workspace:packages/notify":
+"@nexim/prettier-config@npm:^1.0.1":
+  version: 1.0.1
+  resolution: "@nexim/prettier-config@npm:1.0.1"
+  dependencies:
+    prettier: "npm:^3.4.2"
+    prettier-plugin-packagejson: "npm:^2.5.6"
+    prettier-plugin-tailwindcss: "npm:^0.6.9"
+  checksum: 10c0/66c64f880cb9598077b6a82bf7dcd2558db2046901118ebdd6ac4f28c167faa761e1d204895a0c120195842fff9a94ef32d03613ed87e12fc3d2ae820e205d72
+  languageName: node
+  linkType: hard
+
+"@nexim/service-worker-notify@workspace:^, @nexim/service-worker-notify@workspace:packages/notify":
   version: 0.0.0-use.local
-  resolution: "@nexim/notify@workspace:packages/notify"
+  resolution: "@nexim/service-worker-notify@workspace:packages/notify"
   dependencies:
     "@alwatr/flux": "npm:^4.0.2"
     "@alwatr/i18n": "npm:^2.0.4"
@@ -3043,17 +3054,6 @@ __metadata:
     wireit: "npm:^0.14.9"
   languageName: unknown
   linkType: soft
-
-"@nexim/prettier-config@npm:^1.0.1":
-  version: 1.0.1
-  resolution: "@nexim/prettier-config@npm:1.0.1"
-  dependencies:
-    prettier: "npm:^3.4.2"
-    prettier-plugin-packagejson: "npm:^2.5.6"
-    prettier-plugin-tailwindcss: "npm:^0.6.9"
-  checksum: 10c0/66c64f880cb9598077b6a82bf7dcd2558db2046901118ebdd6ac4f28c167faa761e1d204895a0c120195842fff9a94ef32d03613ed87e12fc3d2ae820e205d72
-  languageName: node
-  linkType: hard
 
 "@nexim/service-worker@npm:^1.0.0":
   version: 1.0.0
@@ -3096,6 +3096,7 @@ __metadata:
     "@alwatr/package-tracer": "npm:^5.0.0"
     "@alwatr/type-helper": "npm:^5.0.0"
     "@nexim/eleventy-config": "workspace:^"
+    "@nexim/service-worker-notify": "workspace:^"
     "@nexim/typescript-config": "npm:^1.0.1"
     "@types/node": "npm:^22.10.2"
     ava: "npm:^6.2.0"

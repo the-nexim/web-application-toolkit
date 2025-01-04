@@ -42,7 +42,8 @@
   },
   "dependencies": {
     "@alwatr/package-tracer": "^5.0.0",
-    "@nexim/eleventy-config": "workspace:^"
+    "@nexim/eleventy-config": "workspace:^",
+    "@nexim/service-worker-notify": "workspace:^"
   },
   "devDependencies": {
     "@alwatr/nano-build": "^5.0.0",

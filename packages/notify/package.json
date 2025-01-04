@@ -1,5 +1,5 @@
 {
-  "name": "@nexim/notify",
+  "name": "@nexim/service-worker-notify",
   "version": "0.0.0",
   "description": "Handles service worker notifications and displays snackbar messages with our without Close Button.",
   "keywords": [
@@ -10,7 +10,7 @@
     "typescript",
     "nexim"
   ],
-  "homepage": "https://github.com/the-nexim/web-app-toolkit/tree/next/packages/notify#readme",
+  "homepage": "https://github.com/the-nexim/web-app-toolkit/tree/next/packages/service-worker-notify#readme",
   "bugs": {
     "url": "https://github.com/the-nexim/web-app-toolkit/issues"
   },
