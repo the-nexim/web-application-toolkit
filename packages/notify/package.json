@@ -1,11 +1,12 @@
 {
   "name": "@nexim/notify",
   "version": "0.0.0",
-  "description": "Snackbar Notify component with signal capability.",
+  "description": "Handles service worker notifications and displays snackbar messages with our without Close Button.",
   "keywords": [
     "snackbar",
     "notification",
     "notify",
+    "service worker",
     "typescript",
     "nexim"
   ],
@@ -53,7 +54,7 @@
     "@alwatr/wait": "^1.1.16",
     "@nexim/element": "^1.1.0",
     "@nexim/service-worker": "^1.0.0",
-    "@nexim/snackbar": "^1.0.0-alpha.2",
+    "@nexim/snackbar": "^1.0.0",
     "lit": "^3.2.1"
   },
   "devDependencies": {

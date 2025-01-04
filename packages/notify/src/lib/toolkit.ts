@@ -1,10 +1,21 @@
 import {createLogger} from '@alwatr/logger';
-import {waitForAnimationFrame, waitForTimeout} from '@alwatr/wait';
 import {LightDomMixin, LoggerMixin} from '@nexim/element';
 import {LitElement} from 'lit';
 
 export const logger = /* @__PURE__ */ createLogger('common/service-worker');
 
+export const BaseElement = LightDomMixin(LoggerMixin(LitElement));
+
+/**
+ * Compares two version strings to determine if the current version is larger than the other version.
+ *
+ * @param {string} currentVersion - The current version string in the format 'x.y.z'.
+ * @param {string} otherVersion - The other version string to compare against in the format 'x.y.z'.
+ * @returns {boolean} True if the current version is larger, false otherwise.
+ *
+ * @example
+ * const isLarger = isVersionLarger('1.2.3', '1.2.2'); // returns true
+ */
 export function isVersionLarger(currentVersion: string, otherVersion: string) {
   logger.logMethodArgs?.('isVersionLarger', {currentVersion, otherVersion});
   const current = currentVersion.split('.').map(Number);
@@ -17,27 +28,3 @@ export function isVersionLarger(currentVersion: string, otherVersion: string) {
 
   return false;
 }
-
-/**
- * Running code immediately after a repaint maximizes the chance that the DOM has been fully calculated.
- * This minimizes the chance that querying the DOM will cause a costly reflow.
- * If you're not querying the DOM, then this isn't something you need to worry about.
- *
- * `requestAnimationFrame` schedules code to run immediately before the repaint, which is close but not quite ideal.
- * Using `setTimeout` with a delay of 0 (or `setImmediate` on supported browsers) will execute code as soon as possible after that.
- * This approach doesn't guarantee that your code is the first to run after the repaint,
- * but it's the best you can do with the available APIs.
- *
- * @see https://stackoverflow.com/a/47184426
- */
-export function waitForNextFrame(): Promise<void> {
-  logger.logOther?.('waitForNextFrame');
-
-  return new Promise((resolve) => {
-    waitForAnimationFrame().then(() => {
-      waitForTimeout(0).then(resolve);
-    });
-  });
-}
-
-export const BaseElement = LightDomMixin(LoggerMixin(LitElement));

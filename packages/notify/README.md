@@ -1,45 +1,37 @@
-# @nexim/snackbar
+# @nexim/toolkit
 
-Snackbar component with signal capability.
-
-![NPM Version](https://img.shields.io/npm/v/@nexim/snackbar)
-![npm bundle size](https://img.shields.io/bundlephobia/min/@nexim/snackbar)
-![Build & Lint & Test](https://github.com/the-nexim/design-system/actions/workflows/build-lint-test.yaml/badge.svg)
-![NPM Downloads](https://img.shields.io/npm/dm/@nexim/snackbar)
-![NPM License](https://img.shields.io/npm/l/@nexim/snackbar)
+![NPM Version](https://img.shields.io/npm/v/@nexim/notify)
+![npm bundle size](https://img.shields.io/bundlephobia/min/@nexim/notify)
+![Build & Lint & Test](https://github.com/the-nexim/web-app-toolkit/actions/workflows/build-lint-test.yaml/badge.svg)
+![NPM Downloads](https://img.shields.io/npm/dm/@nexim/notify)
+![NPM License](https://img.shields.io/npm/l/@nexim/notify)
 
 ## Overview
 
-Snackbar component. It includes utilities for managing the snackbar's state and animations.
+Handles service worker notifications and displays snackbar messages with our without Close Button.
 
 ## Installation
 
 Install the package using npm or yarn:
 
 ```sh
-npm install @nexim/snackbar
+npm install @nexim/notify
 
 # Or using yarn
-yarn add @nexim/snackbar
+yarn add @nexim/notify
 ```
 
 ## API
 
-### snackbarSignal
+### serviceWorkerNotifySnackbar
 
-To display a snackbar, emit the snackbarSignal with the desired options:
+Handles service worker notifications and displays a snackbar message with or without a close button.
 
 ```ts
-import {snackbarSignal} from '@nexim/snackbar';
+import {serviceWorkerNotifySnackbar} from '@nexim/notify';
 
-snackbarSignal.notify({
-  content: 'This is a snackbar message',
-  // The following properties are optional.
-  action: {
-    label: 'Undo',
-    signalId: 'undo-handler',
-  },
-  duration: '5s',
-  addCloseButton: true,
+serviceWorkerNotifyHandler({
+  lastNotifyVersion,
+  changelogPage: 'https://example.com/changelog' || '/changelog/'
 });
 ```
