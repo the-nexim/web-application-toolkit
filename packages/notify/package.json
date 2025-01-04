@@ -1,6 +1,6 @@
 {
-  "name": "@nexim/snackbar",
-  "version": "1.0.0-alpha.2",
+  "name": "@nexim/notify",
+  "version": "0.0.0",
   "description": "Snackbar component with signal capability.",
   "keywords": [
     "snackbar",
@@ -50,13 +50,14 @@
     "@alwatr/i18n": "^2.0.4",
     "@alwatr/local-storage": "^5.0.0",
     "@alwatr/math": "^1.3.1",
+    "@alwatr/wait": "^1.1.16",
     "@nexim/element": "^1.1.0",
     "@nexim/service-worker": "^1.0.0",
-    "lit": "^3.2.1",
-    "@alwatr/wait": "^1.1.16",
-    "@alwatr/logger": "^5.0.0"
+    "@nexim/snackbar": "^1.0.0-alpha.2",
+    "lit": "^3.2.1"
   },
   "devDependencies": {
+    "@alwatr/logger": "^5.0.0",
     "@alwatr/nano-build": "^5.0.0",
     "@alwatr/package-tracer": "^5.0.0",
     "@alwatr/type-helper": "^5.0.0",
