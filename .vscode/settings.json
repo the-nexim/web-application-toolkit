@@ -29,9 +29,11 @@
     "*.njk": "html"
   },
   "files.exclude": {
-    // "**/*.map": true,
-    // "**/*.d.ts": true,
-    // "**/*.tsbuildinfo": true
+    "**/.wireit": true,
+    "**/node_modules": true,
+    "**/CHANGELOG.md": true,
+    "**/tsconfig.tsbuildinfo": true,
+    "**/.pnp*": true
   },
   "git.autoStash": true,
   "git.branchProtection": ["main", "next"],
