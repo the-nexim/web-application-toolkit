@@ -1,0 +1,104 @@
+{
+  "name": "@nexim/pwa-install-prompt",
+  "version": "0.0.0",
+  "description": "PWA install prompt handler.",
+  "keywords": [
+    "pwa",
+    "typescript",
+    "nexim"
+  ],
+  "homepage": "https://github.com/the-nexim/web-app-toolkit/tree/next/packages/pwa-install-prompt#readme",
+  "bugs": {
+    "url": "https://github.com/the-nexim/web-app-toolkit/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/the-nexim/web-app-toolkit",
+    "directory": "packages/pwa-install-prompt"
+  },
+  "license": "AGPL-3.0-only",
+  "author": "S. Amir Mohammad Najafi <njfamirm@gmail.com> (https://www.njfamirm.ir)",
+  "contributors": [
+    "Arash Ghardashpoor <arash.qardashpoor@gmail.com> (https://www.agpagp.ir)"
+  ],
+  "type": "module",
+  "exports": {
+    ".": {
+      "types": "./dist/main.d.ts",
+      "import": "./dist/main.mjs",
+      "require": "./dist/main.cjs"
+    }
+  },
+  "main": "./dist/main.cjs",
+  "module": "./dist/main.mjs",
+  "types": "./dist/main.d.ts",
+  "files": [
+    "**/*.{js,mjs,cjs,map,d.ts,html,md,LEGAL.txt}",
+    "LICENSE"
+  ],
+  "scripts": {
+    "build": "wireit",
+    "test": "wireit",
+    "watch": "wireit"
+  },
+  "dependencies": {
+    "@alwatr/logger": "^5.0.0",
+    "@alwatr/package-tracer": "^5.0.0",
+    "@alwatr/parse-duration": "^5.0.0",
+    "@alwatr/wait": "^1.1.16",
+    "@nexim/snackbar": "^1.0.0"
+  },
+  "devDependencies": {
+    "@alwatr/nano-build": "^5.0.0",
+    "@alwatr/type-helper": "^5.0.0",
+    "@nexim/typescript-config": "^1.0.1",
+    "@types/node": "^22.10.2",
+    "ava": "^6.2.0",
+    "typescript": "^5.7.2",
+    "wireit": "^0.14.9"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "wireit": {
+    "test": {
+      "command": "NODE_OPTIONS=\"$NODE_OPTIONS --enable-source-maps --experimental-vm-modules\" ava"
+    },
+    "build": {
+      "dependencies": [
+        "build:type",
+        "build:es"
+      ]
+    },
+    "build:es": {
+      "command": "nano-build --preset=module",
+      "files": [
+        "src",
+        "tsconfig.json"
+      ],
+      "clean": "if-file-deleted",
+      "output": [
+        "dist/es",
+        "tsconfig.tsbuildinfo"
+      ]
+    },
+    "build:type": {
+      "command": "tsc --build"
+    },
+    "watch": {
+      "dependencies": [
+        "watch:ts"
+      ]
+    },
+    "watch:ts": {
+      "command": "tsc --build --watch --preserveWatchOutput",
+      "dependencies": [
+        "watch:es"
+      ]
+    },
+    "watch:es": {
+      "command": "nano-build --preset=module -- --watch",
+      "service": true
+    }
+  }
+}
