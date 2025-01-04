@@ -3031,9 +3031,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@nexim/service-worker-notify@workspace:^, @nexim/service-worker-notify@workspace:packages/notify":
+"@nexim/service-worker-notify@workspace:^, @nexim/service-worker-notify@workspace:packages/service-worker-notify":
   version: 0.0.0-use.local
-  resolution: "@nexim/service-worker-notify@workspace:packages/notify"
+  resolution: "@nexim/service-worker-notify@workspace:packages/service-worker-notify"
   dependencies:
     "@alwatr/flux": "npm:^4.0.2"
     "@alwatr/i18n": "npm:^2.0.4"
