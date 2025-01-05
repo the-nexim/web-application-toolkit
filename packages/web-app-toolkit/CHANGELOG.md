@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.1.0](https://github.com/the-nexim/web-app-toolkit/compare/@nexim/web-app-toolkit@1.0.2...@nexim/web-app-toolkit@1.1.0) (2025-01-05)
+
+### Features
+
+* **web-app-toolkit:** add @nexim/pwa-install-prompt ([807ce34](https://github.com/the-nexim/web-app-toolkit/commit/807ce343b4b355ace6dbad2459f9f2796297796f)) by @
+
 ## [1.0.2](https://github.com/the-nexim/web-app-toolkit/compare/@nexim/web-app-toolkit@1.0.1...@nexim/web-app-toolkit@1.0.2) (2025-01-04)
 
 ### Code Refactoring
