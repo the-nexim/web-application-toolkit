@@ -32,7 +32,7 @@ export function serviceWorkerNotifySnackbar(options: {lastNotifyVersion: string;
     if (event === 'service_worker_update_found') {
       snackbarSignal.notify({
         content: 'در حال به‌روزرسانی برنامه...',
-        duration: -1,
+        duration: 'infinite',
       });
     }
     else if (event === 'service_worker_first_install') {
@@ -66,7 +66,7 @@ export function serviceWorkerNotifySnackbar(options: {lastNotifyVersion: string;
         ) {
           snackbarSignal.notify({
             content: message,
-            duration: -1,
+            duration: 'infinite',
             addCloseButton: true,
             action: {
               label: 'مشاهده‌ی تغیرات',
@@ -80,7 +80,7 @@ export function serviceWorkerNotifySnackbar(options: {lastNotifyVersion: string;
         else {
           snackbarSignal.notify({
             content: message,
-            duration: -1,
+            duration: 'infinite',
             addCloseButton: true,
           });
         }
@@ -105,7 +105,7 @@ export function serviceWorkerNotifySnackbar(options: {lastNotifyVersion: string;
       localStorage.setItem(notifyLocalStorageKey, __package_version__);
       snackbarSignal.notify({
         content: 'به روز رسانی انجام شد.',
-        duration: -1,
+        duration: 'infinite',
         action: {
           label: 'بارگذاری مجدد',
           handler: () => window.location.reload(),
