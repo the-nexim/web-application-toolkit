@@ -3,6 +3,10 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.0.0-alpha.2](https://github.com/the-nexim/web-app-toolkit/compare/@nexim/pwa-install-prompt@1.0.0-alpha.1...@nexim/pwa-install-prompt@1.0.0-alpha.2) (2025-01-05)
+
+**Note:** Version bump only for package @nexim/pwa-install-prompt
+
 ## [1.0.0-alpha.1](https://github.com/the-nexim/web-app-toolkit/compare/@nexim/pwa-install-prompt@1.0.0-alpha.0...@nexim/pwa-install-prompt@1.0.0-alpha.1) (2025-01-05)
 
 ### Bug Fixes
