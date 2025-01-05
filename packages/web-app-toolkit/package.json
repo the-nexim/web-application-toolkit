@@ -1,7 +1,7 @@
 {
   "name": "@nexim/web-app-toolkit",
   "version": "1.1.1",
-  "description": "Bundle all nexim's web app toolkit packages into single package.",
+  "description": "Bundle all browser based nexim's web app toolkit packages into single package.",
   "keywords": [
     "typescript",
     "nexim"
@@ -42,7 +42,6 @@
   },
   "dependencies": {
     "@alwatr/package-tracer": "^5.0.0",
-    "@nexim/eleventy-config": "workspace:^",
     "@nexim/pwa-install-prompt": "workspace:^",
     "@nexim/service-worker-notify": "workspace:^"
   },
@@ -57,6 +56,9 @@
   },
   "publishConfig": {
     "access": "public"
+  },
+  "nano-build": {
+    "platform": "browser"
   },
   "wireit": {
     "test": {

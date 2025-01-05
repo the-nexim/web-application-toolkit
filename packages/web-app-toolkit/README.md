@@ -7,7 +7,7 @@
 
 ## Overview
 
-Bundle all nexim's web app toolkit packages into single package.
+Bundle all browser based nexim's web app toolkit packages into single package.
 
 ## Installation
 
