@@ -1,6 +1,6 @@
 {
   "name": "@nexim/web-app-toolkit",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "Bundle all nexim's web app toolkit packages into single package.",
   "keywords": [
     "typescript",
