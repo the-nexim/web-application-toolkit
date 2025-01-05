@@ -78,19 +78,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@11ty/eleventy-upgrade-help@npm:3":
-  version: 3.0.1
-  resolution: "@11ty/eleventy-upgrade-help@npm:3.0.1"
-  dependencies:
-    fast-glob: "npm:^3.3.2"
-    kleur: "npm:^4.1.5"
-    minimist: "npm:^1.2.8"
-    posthtml-match-helper: "npm:^2.0.2"
-    semver: "npm:^7.6.3"
-  checksum: 10c0/0c255ec599d461b33db22dbffb62d3b3ff35eb0048247a7288275b66f8b289b6f2a2d36a74a992967147d3ca6b71792f7f12da7813f3194756433bda06a2462d
-  languageName: node
-  linkType: hard
-
 "@11ty/eleventy-utils@npm:^1.0.2, @11ty/eleventy-utils@npm:^1.0.3":
   version: 1.0.3
   resolution: "@11ty/eleventy-utils@npm:1.0.3"
@@ -2966,13 +2953,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@nexim/eleventy-config@workspace:^, @nexim/eleventy-config@workspace:packages/eleventy-config":
+"@nexim/eleventy-config@workspace:packages/eleventy-config":
   version: 0.0.0-use.local
   resolution: "@nexim/eleventy-config@workspace:packages/eleventy-config"
   dependencies:
     "@11ty/eleventy": "npm:^3.0.0"
     "@11ty/eleventy-plugin-directory-output": "npm:^1.0.1"
-    "@11ty/eleventy-upgrade-help": "npm:3"
     "@alwatr/font": "npm:^1.2.0"
     "@alwatr/logger": "npm:^5.0.0"
     "@alwatr/nano-build": "npm:^5.0.0"
@@ -3109,7 +3095,6 @@ __metadata:
     "@alwatr/nano-build": "npm:^5.0.0"
     "@alwatr/package-tracer": "npm:^5.0.0"
     "@alwatr/type-helper": "npm:^5.0.0"
-    "@nexim/eleventy-config": "workspace:^"
     "@nexim/pwa-install-prompt": "workspace:^"
     "@nexim/service-worker-notify": "workspace:^"
     "@nexim/typescript-config": "npm:^1.0.1"

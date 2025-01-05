@@ -65,6 +65,9 @@
   "publishConfig": {
     "access": "public"
   },
+  "nano-build": {
+    "platform": "browser"
+  },
   "wireit": {
     "test": {
       "command": "NODE_OPTIONS=\"$NODE_OPTIONS --enable-source-maps --experimental-vm-modules\" ava"

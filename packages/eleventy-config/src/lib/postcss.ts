@@ -17,18 +17,19 @@ import {logger} from './logger.js';
 
 const basePath = 'style';
 
-const postCssPlugins = [postcssImport({root: basePath}), postcssNesting, tailwindcss, postcssViewportUnitFallback, postcssPresetEnv];
+const postCssPlugins = [
+  /* @__PURE__ */ postcssImport({root: basePath}),
+  postcssNesting,
+  tailwindcss,
+  postcssViewportUnitFallback,
+  postcssPresetEnv,
+];
 
 if (platformInfo.development !== true) {
-  postCssPlugins.push(
-    postcssVariableCompress,
-    cssnano({
-      preset: ['default', {discardComments: {removeAll: true}}],
-    }),
-  );
+  /* @__PURE__ */ postCssPlugins.push(postcssVariableCompress, cssnano({preset: ['default', {discardComments: {removeAll: true}}]}));
 }
 
-const postCss = postcss(postCssPlugins);
+const postCss = /* @__PURE__ */ postcss(postCssPlugins);
 
 export async function postcssBuild(): Promise<void> {
   logger.logMethod?.('postcssBuild');
