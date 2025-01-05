@@ -42,8 +42,8 @@
   },
   "dependencies": {
     "@alwatr/package-tracer": "^5.0.0",
-    "@nexim/pwa-install-prompt": "^1.0.0-alpha.2",
-    "@nexim/service-worker-notify": "^1.0.0-alpha.3"
+    "@nexim/pwa-install-prompt": "workspace:^",
+    "@nexim/service-worker-notify": "workspace:^"
   },
   "devDependencies": {
     "@alwatr/nano-build": "^5.0.0",

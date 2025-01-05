@@ -3018,7 +3018,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@nexim/pwa-install-prompt@npm:^1.0.0-alpha.1, @nexim/pwa-install-prompt@workspace:packages/pwa-install-prompt":
+"@nexim/pwa-install-prompt@workspace:^, @nexim/pwa-install-prompt@workspace:packages/pwa-install-prompt":
   version: 0.0.0-use.local
   resolution: "@nexim/pwa-install-prompt@workspace:packages/pwa-install-prompt"
   dependencies:
@@ -3037,7 +3037,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@nexim/service-worker-notify@npm:^1.0.0-alpha.2, @nexim/service-worker-notify@workspace:packages/service-worker-notify":
+"@nexim/service-worker-notify@workspace:^, @nexim/service-worker-notify@workspace:packages/service-worker-notify":
   version: 0.0.0-use.local
   resolution: "@nexim/service-worker-notify@workspace:packages/service-worker-notify"
   dependencies:
@@ -3095,8 +3095,8 @@ __metadata:
     "@alwatr/nano-build": "npm:^5.0.0"
     "@alwatr/package-tracer": "npm:^5.0.0"
     "@alwatr/type-helper": "npm:^5.0.0"
-    "@nexim/pwa-install-prompt": "npm:^1.0.0-alpha.1"
-    "@nexim/service-worker-notify": "npm:^1.0.0-alpha.2"
+    "@nexim/pwa-install-prompt": "workspace:^"
+    "@nexim/service-worker-notify": "workspace:^"
     "@nexim/typescript-config": "npm:^1.1.0"
     "@types/node": "npm:^22.10.5"
     ava: "npm:^6.2.0"
