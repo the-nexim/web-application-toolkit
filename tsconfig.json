@@ -12,6 +12,12 @@
     },
     {
       "path": "./packages/web-app-toolkit"
+    },
+    {
+      "path": "./packages/pwa-install-prompt"
+    },
+    {
+      "path": "./packages/service-worker-notify"
     }
   ]
 }

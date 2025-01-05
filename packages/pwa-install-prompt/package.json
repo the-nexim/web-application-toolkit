@@ -1,19 +1,20 @@
 {
-  "name": "@nexim/web-app-toolkit",
-  "version": "1.0.2",
-  "description": "Bundle all nexim's web app toolkit packages into single package.",
+  "name": "@nexim/pwa-install-prompt",
+  "version": "0.0.0",
+  "description": "PWA install prompt handler.",
   "keywords": [
+    "pwa",
     "typescript",
     "nexim"
   ],
-  "homepage": "https://github.com/the-nexim/web-app-toolkit/tree/next/packages/web-app-toolkit#readme",
+  "homepage": "https://github.com/the-nexim/web-app-toolkit/tree/next/packages/pwa-install-prompt#readme",
   "bugs": {
     "url": "https://github.com/the-nexim/web-app-toolkit/issues"
   },
   "repository": {
     "type": "git",
     "url": "https://github.com/the-nexim/web-app-toolkit",
-    "directory": "packages/web-app-toolkit"
+    "directory": "packages/pwa-install-prompt"
   },
   "license": "AGPL-3.0-only",
   "author": "S. Amir Mohammad Najafi <njfamirm@gmail.com> (https://www.njfamirm.ir)",
@@ -41,10 +42,11 @@
     "watch": "wireit"
   },
   "dependencies": {
+    "@alwatr/logger": "^5.0.0",
     "@alwatr/package-tracer": "^5.0.0",
-    "@nexim/eleventy-config": "workspace:^",
-    "@nexim/pwa-install-prompt": "workspace:^",
-    "@nexim/service-worker-notify": "workspace:^"
+    "@alwatr/parse-duration": "^5.0.0",
+    "@alwatr/wait": "^1.1.16",
+    "@nexim/snackbar": "^1.0.0"
   },
   "devDependencies": {
     "@alwatr/nano-build": "^5.0.0",
