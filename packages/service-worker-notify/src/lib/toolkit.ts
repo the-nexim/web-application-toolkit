@@ -1,10 +1,6 @@
 import {createLogger} from '@alwatr/logger';
-import {LightDomMixin, LoggerMixin} from '@nexim/element';
-import {LitElement} from 'lit';
 
-export const logger = /* @__PURE__ */ createLogger('common/service-worker');
-
-export const BaseElement = LightDomMixin(LoggerMixin(LitElement));
+export const logger = /* @__PURE__ */ createLogger(__package_name__);
 
 /**
  * Compares two version strings to determine if the current version is larger than the other version.

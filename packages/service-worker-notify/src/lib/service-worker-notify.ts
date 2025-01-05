@@ -99,6 +99,8 @@ export function serviceWorkerNotifySnackbar(options: {lastNotifyVersion: string;
       /**
        * Handles the 'service_worker_updated' event.
        * Displays a snackbar notification indicating the update is complete and provides a reload action.
+       *
+       * TODO: use @alwatr/local-storage
        */
       localStorage.setItem(notifyLocalStorageKey, __package_version__);
       snackbarSignal.notify({
