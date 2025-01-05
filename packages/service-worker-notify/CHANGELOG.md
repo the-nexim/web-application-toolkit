@@ -3,6 +3,10 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.0.0-alpha.4](https://github.com/the-nexim/web-app-toolkit/compare/@nexim/service-worker-notify@1.0.0-alpha.3...@nexim/service-worker-notify@1.0.0-alpha.4) (2025-01-05)
+
+**Note:** Version bump only for package @nexim/service-worker-notify
+
 ## [1.0.0-alpha.3](https://github.com/the-nexim/web-app-toolkit/compare/@nexim/service-worker-notify@1.0.0-alpha.2...@nexim/service-worker-notify@1.0.0-alpha.3) (2025-01-05)
 
 ### Bug Fixes

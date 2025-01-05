@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.1.4](https://github.com/the-nexim/web-app-toolkit/compare/@nexim/web-app-toolkit@1.1.3...@nexim/web-app-toolkit@1.1.4) (2025-01-05)
+
+### Bug Fixes
+
+* **web-app-toolkit:** use `workspace:^` version ([46b5356](https://github.com/the-nexim/web-app-toolkit/commit/46b53560d2bdc31ecd6e53f623a786dc1d5cb1af)) by @
+
 ## [1.1.3](https://github.com/the-nexim/web-app-toolkit/compare/@nexim/web-app-toolkit@1.1.2...@nexim/web-app-toolkit@1.1.3) (2025-01-05)
 
 **Note:** Version bump only for package @nexim/web-app-toolkit

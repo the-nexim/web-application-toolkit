@@ -1,6 +1,6 @@
 {
   "name": "@nexim/service-worker-notify",
-  "version": "1.0.0-alpha.3",
+  "version": "1.0.0-alpha.4",
   "description": "Handles service worker notifications and displays snackbar messages with our without Close Button.",
   "keywords": [
     "snackbar",
