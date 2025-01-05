@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.1.1](https://github.com/the-nexim/web-app-toolkit/compare/@nexim/eleventy-config@1.1.0...@nexim/eleventy-config@1.1.1) (2025-01-05)
+
+### Bug Fixes
+
+* **eleventy-config:** prevent side effect ([4be2d6d](https://github.com/the-nexim/web-app-toolkit/commit/4be2d6d5c645420030c85f65cab4119219480d07)) by @njfamirm
+
 ## [1.1.0](https://github.com/the-nexim/web-app-toolkit/compare/@nexim/eleventy-config@1.0.0...@nexim/eleventy-config@1.1.0) (2025-01-02)
 
 ### Features

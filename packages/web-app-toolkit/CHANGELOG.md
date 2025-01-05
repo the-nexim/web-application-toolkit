@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.1.2](https://github.com/the-nexim/web-app-toolkit/compare/@nexim/web-app-toolkit@1.1.1...@nexim/web-app-toolkit@1.1.2) (2025-01-05)
+
+### Bug Fixes
+
+* **web-app-toolkit:** remove `@nexim/eleventy-config` from export to prevent platform conflict ([e9f9114](https://github.com/the-nexim/web-app-toolkit/commit/e9f91142a1fa98cd4f8a023f7a9786900c4e6b18)) by @njfamirm
+
 ## [1.1.1](https://github.com/the-nexim/web-app-toolkit/compare/@nexim/web-app-toolkit@1.1.0...@nexim/web-app-toolkit@1.1.1) (2025-01-05)
 
 **Note:** Version bump only for package @nexim/web-app-toolkit
