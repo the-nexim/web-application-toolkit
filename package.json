@@ -24,17 +24,17 @@
     "upd": "yarn set version latest && yarn up '*' && yarn up '*' -R && yarn dlx @yarnpkg/sdks vscode && yarn dedupe"
   },
   "devDependencies": {
-    "@lerna-lite/changed": "^3.10.1",
-    "@lerna-lite/cli": "^3.10.1",
-    "@lerna-lite/diff": "^3.10.1",
-    "@lerna-lite/exec": "^3.10.1",
-    "@lerna-lite/publish": "^3.10.1",
-    "@lerna-lite/run": "^3.10.1",
-    "@lerna-lite/version": "^3.10.1",
-    "@nexim/eslint-config": "^1.1.0",
-    "@nexim/prettier-config": "^1.0.1",
-    "@nexim/typescript-config": "^1.0.1",
-    "@types/node": "^22.10.2",
+    "@lerna-lite/changed": "^3.11.0",
+    "@lerna-lite/cli": "^3.11.0",
+    "@lerna-lite/diff": "^3.11.0",
+    "@lerna-lite/exec": "^3.11.0",
+    "@lerna-lite/publish": "^3.11.0",
+    "@lerna-lite/run": "^3.11.0",
+    "@lerna-lite/version": "^3.11.0",
+    "@nexim/eslint-config": "^1.1.1",
+    "@nexim/prettier-config": "^1.1.0",
+    "@nexim/typescript-config": "^1.1.0",
+    "@types/node": "^22.10.5",
     "@typescript-eslint/eslint-plugin": "^7.15.0",
     "@typescript-eslint/parser": "^7.15.0",
     "ava": "^6.2.0",
@@ -54,7 +54,7 @@
       "unplugged": true
     }
   },
-  "packageManager": "yarn@4.5.3",
+  "packageManager": "yarn@4.6.0",
   "engines": {
     "node": ">=18.16.0",
     "yarn": ">=4.0.0"

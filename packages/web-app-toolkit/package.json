@@ -42,14 +42,14 @@
   },
   "dependencies": {
     "@alwatr/package-tracer": "^5.0.0",
-    "@nexim/pwa-install-prompt": "workspace:^",
-    "@nexim/service-worker-notify": "workspace:^"
+    "@nexim/pwa-install-prompt": "^1.0.0-alpha.1",
+    "@nexim/service-worker-notify": "^1.0.0-alpha.2"
   },
   "devDependencies": {
     "@alwatr/nano-build": "^5.0.0",
     "@alwatr/type-helper": "^5.0.0",
-    "@nexim/typescript-config": "^1.0.1",
-    "@types/node": "^22.10.2",
+    "@nexim/typescript-config": "^1.1.0",
+    "@types/node": "^22.10.5",
     "ava": "^6.2.0",
     "typescript": "^5.7.2",
     "wireit": "^0.14.9"
