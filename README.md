@@ -1,6 +1,6 @@
-# ECMAScript Nano Libs
+# Nexim Web Application Toolkit
 
-This repository contains numerous small utility packages. These packages serve various useful purposes and are written in nano ESModule.
+List of packages within the Nexim ecosystem designed for Nexim applications.
 
 Here is a brief overview of the included libraries:
 
