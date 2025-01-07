@@ -3029,7 +3029,7 @@ __metadata:
     "@alwatr/type-helper": "npm:^5.0.0"
     "@alwatr/wait": "npm:^1.1.16"
     "@nexim/snackbar": "npm:^1.0.2"
-    "@nexim/typescript-config": "npm:^1.1.0"
+    "@nexim/typescript-config": "npm:^2.0.0"
     "@types/node": "npm:^22.10.5"
     ava: "npm:^6.2.0"
     typescript: "npm:^5.7.2"
@@ -3085,6 +3085,15 @@ __metadata:
   version: 1.1.0
   resolution: "@nexim/typescript-config@npm:1.1.0"
   checksum: 10c0/70bbe95eb11c79b96b7f0b8602b10043e82426cec1bfb2cce8a8e6cbe2d5fbdc2986ca3929a836700ed51a030da84992350b8423bd0a51b3b2bce59973650a7d
+  languageName: node
+  linkType: hard
+
+"@nexim/typescript-config@npm:^2.0.0":
+  version: 2.0.0
+  resolution: "@nexim/typescript-config@npm:2.0.0"
+  peerDependencies:
+    typescript: ^5
+  checksum: 10c0/0a5c8ae728ec4c9f55ee2b7b69d4e88c3737fc01fa82e40b341d8fc8957b98332567ce0468fc33ef244acaf5d12193044dcd2517c560265a33e254e8daf9109d
   languageName: node
   linkType: hard
 

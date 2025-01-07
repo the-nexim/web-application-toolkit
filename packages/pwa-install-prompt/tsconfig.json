@@ -1,12 +1,10 @@
 {
-  "extends": "@nexim/typescript-config/tsconfig.json",
+  "extends": "@nexim/typescript-config/tsconfig.browser.lib.json",
   "compilerOptions": {
     "rootDir": "src",
     "outDir": "dist",
     "allowJs": true,
-    "emitDeclarationOnly": true,
     "declaration": true,
-    "composite": true,
     "declarationMap": true,
     "types": ["@alwatr/nano-build", "@alwatr/type-helper"]
   },

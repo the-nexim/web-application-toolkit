@@ -1,5 +1,5 @@
 {
-  "extends": "@nexim/typescript-config/tsconfig.json",
+  "extends": "@nexim/typescript-config/tsconfig.base.json",
   "compilerOptions": {
     "noEmit": true,
     "types": ["node"]
