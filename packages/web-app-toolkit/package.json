@@ -48,7 +48,7 @@
   "devDependencies": {
     "@alwatr/nano-build": "^5.0.0",
     "@alwatr/type-helper": "^5.0.0",
-    "@nexim/typescript-config": "^1.1.0",
+    "@nexim/typescript-config": "^2.0.0",
     "@types/node": "^22.10.5",
     "ava": "^6.2.0",
     "typescript": "^5.7.2",

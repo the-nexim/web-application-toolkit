@@ -1,5 +1,5 @@
 {
-  "extends": "@nexim/typescript-config/tsconfig.json",
+  "extends": "@nexim/typescript-config/tsconfig.node.lib.json",
   "compilerOptions": {
     "rootDir": "src",
     "outDir": "dist",

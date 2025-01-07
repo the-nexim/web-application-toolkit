@@ -1,10 +1,8 @@
 {
-  "extends": "@nexim/typescript-config/tsconfig.json",
+  "extends": "@nexim/typescript-config/tsconfig.browser.lib.json",
   "compilerOptions": {
     "rootDir": "src",
     "outDir": "dist",
-    "emitDeclarationOnly": true,
-    "composite": true,
     "types": ["@alwatr/nano-build", "@alwatr/type-helper"]
   },
   "include": ["src/**/*.ts"],
