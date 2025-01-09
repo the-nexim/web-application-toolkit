@@ -19,7 +19,7 @@ const notifyLocalStorageKey = 'notify_new_version';
  *   changelogPage: 'https://example.com/changelog'
  * });
  */
-export function serviceWorkerNotifySnackbar(options: {lastNotifyVersion: string; changelogPage?: string}): void {
+export function serviceWorkerNotifySnackbar(options: {lastNotifyVersion: string; changelogPage?: string, currentVersion: string}): void {
   logger.logMethodArgs?.('serviceWorkerNotifyHandler', {options});
 
   serviceWorkerSignal.subscribe(({event}) => {
@@ -51,7 +51,7 @@ export function serviceWorkerNotifySnackbar(options: {lastNotifyVersion: string;
       const lastLocalVersion = localStorage.getItem(notifyLocalStorageKey);
       if (lastLocalVersion !== null) {
         localStorage.removeItem(notifyLocalStorageKey);
-        const message = `به نسخه ${l10n.replaceNumber(__package_version__.replace('-alpha', '-آلفا'))} خوش‌آمدید.`;
+        const message = `به نسخه ${l10n.replaceNumber(options.currentVersion.replace('-alpha', '-آلفا'))} خوش‌آمدید.`;
 
         /**
          * Handles the display of a snackbar notification based on the service worker event.
@@ -60,7 +60,7 @@ export function serviceWorkerNotifySnackbar(options: {lastNotifyVersion: string;
          * Otherwise, it shows a snackbar with a close button.
          */
         if (
-          (options.changelogPage != null && options.lastNotifyVersion === __package_version__) ||
+          (options.changelogPage != null && options.lastNotifyVersion === options.currentVersion) ||
           lastLocalVersion === '' ||
           isVersionLarger(options.lastNotifyVersion, lastLocalVersion)
         ) {
