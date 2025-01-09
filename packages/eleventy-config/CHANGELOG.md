@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.1.4](https://github.com/the-nexim/web-app-toolkit/compare/@nexim/eleventy-config@1.1.3...@nexim/eleventy-config@1.1.4) (2025-01-09)
+
+### Code Refactoring
+
+* **typescripts:** update typescript configurations ([#15](https://github.com/the-nexim/web-app-toolkit/issues/15)) ([daea0ce](https://github.com/the-nexim/web-app-toolkit/commit/daea0ceaf35c238f477f5a671186241e51715f18)) by @arashagp
+
 ## [1.1.3](https://github.com/the-nexim/web-app-toolkit/compare/@nexim/eleventy-config@1.1.2...@nexim/eleventy-config@1.1.3) (2025-01-05)
 
 **Note:** Version bump only for package @nexim/eleventy-config

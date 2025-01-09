@@ -3,6 +3,16 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.0.0-alpha.5](https://github.com/the-nexim/web-app-toolkit/compare/@nexim/service-worker-notify@1.0.0-alpha.4...@nexim/service-worker-notify@1.0.0-alpha.5) (2025-01-09)
+
+### Bug Fixes
+
+* **snackbar:** fix issue for __package_version__ ([#16](https://github.com/the-nexim/web-app-toolkit/issues/16)) ([9dfd8bc](https://github.com/the-nexim/web-app-toolkit/commit/9dfd8bc18416b5aa08ee0791720b7ef67d9f6006)) by @arashagp
+
+### Code Refactoring
+
+* **typescripts:** update typescript configurations ([#15](https://github.com/the-nexim/web-app-toolkit/issues/15)) ([daea0ce](https://github.com/the-nexim/web-app-toolkit/commit/daea0ceaf35c238f477f5a671186241e51715f18)) by @arashagp
+
 ## [1.0.0-alpha.4](https://github.com/the-nexim/web-app-toolkit/compare/@nexim/service-worker-notify@1.0.0-alpha.3...@nexim/service-worker-notify@1.0.0-alpha.4) (2025-01-05)
 
 **Note:** Version bump only for package @nexim/service-worker-notify
