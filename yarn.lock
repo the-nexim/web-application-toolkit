@@ -2942,15 +2942,15 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@nexim/element@npm:^1.1.1":
-  version: 1.1.1
-  resolution: "@nexim/element@npm:1.1.1"
+"@nexim/element@npm:^1.1.3":
+  version: 1.1.3
+  resolution: "@nexim/element@npm:1.1.3"
   dependencies:
     "@alwatr/logger": "npm:^5.0.0"
     "@alwatr/package-tracer": "npm:^5.0.0"
     "@alwatr/type-helper": "npm:^5.0.0"
     lit: "npm:^3.2.1"
-  checksum: 10c0/f1a83a49cb0ea7368ef75f80199c09357b61275bb2d13bf97c7cf57eb73a24d00d03f5df8195747c898d4e79698b80cb9697da8e1e29a61f470d1d647d4e3785
+  checksum: 10c0/097c86c1cd908f1f287891f3795c7f9ed79d4aa4e4deca59ebf700be265e445953caf7589d71f4a2361643d5bb6a8aee429e95b8043b1c99d9928bf961e30308
   languageName: node
   linkType: hard
 
@@ -3028,7 +3028,7 @@ __metadata:
     "@alwatr/parse-duration": "npm:^5.0.0"
     "@alwatr/type-helper": "npm:^5.0.0"
     "@alwatr/wait": "npm:^1.1.16"
-    "@nexim/snackbar": "npm:^1.0.3"
+    "@nexim/snackbar": "npm:^1.0.4"
     "@nexim/typescript-config": "npm:^2.0.0"
     "@types/node": "npm:^22.10.7"
     ava: "npm:^6.2.0"
@@ -3048,7 +3048,7 @@ __metadata:
     "@alwatr/type-helper": "npm:^5.0.0"
     "@alwatr/wait": "npm:^1.1.16"
     "@nexim/service-worker": "npm:1.0.4"
-    "@nexim/snackbar": "npm:^1.0.3"
+    "@nexim/snackbar": "npm:^1.0.4"
     "@nexim/typescript-config": "npm:^2.0.0"
     ava: "npm:^6.2.0"
     typescript: "npm:^5.7.3"
@@ -3067,17 +3067,17 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@nexim/snackbar@npm:^1.0.3":
-  version: 1.0.3
-  resolution: "@nexim/snackbar@npm:1.0.3"
+"@nexim/snackbar@npm:^1.0.4":
+  version: 1.0.4
+  resolution: "@nexim/snackbar@npm:1.0.4"
   dependencies:
     "@alwatr/delay": "npm:^5.0.0"
     "@alwatr/flux": "npm:^4.0.2"
     "@alwatr/logger": "npm:^5.0.0"
     "@alwatr/package-tracer": "npm:^5.0.0"
-    "@nexim/element": "npm:^1.1.1"
+    "@nexim/element": "npm:^1.1.3"
     lit: "npm:^3.2.1"
-  checksum: 10c0/ac9835c65a7931cd48e4eb525938982d9f97d5e951a2dcdf53738a0525c939cf29cf49d25987b01497bc490668e5a7b10d05c9658734e53a5e6c0e1d7709c988
+  checksum: 10c0/a8c0253fa3991ac3a9b94f6c322bb2f09510d8a27dc105a6fc18159cfa9f9da4c263381ef648e87487e67f1e1cc66eaf10f2a38234f0289499c71396a6e706be
   languageName: node
   linkType: hard
 

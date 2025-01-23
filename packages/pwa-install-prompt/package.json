@@ -46,7 +46,7 @@
     "@alwatr/package-tracer": "^5.0.0",
     "@alwatr/parse-duration": "^5.0.0",
     "@alwatr/wait": "^1.1.16",
-    "@nexim/snackbar": "^1.0.3"
+    "@nexim/snackbar": "^1.0.4"
   },
   "devDependencies": {
     "@alwatr/nano-build": "^5.0.0",
