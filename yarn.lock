@@ -2972,7 +2972,7 @@ __metadata:
     "@types/eleventy-plugin-toc": "npm:^1.1.0"
     "@types/markdown-it": "npm:^14.1.2"
     "@types/markdown-it-attrs": "npm:^4.1.3"
-    "@types/node": "npm:^22.10.10"
+    "@types/node": "npm:^22.12.0"
     "@types/postcss-import": "npm:^14.0.3"
     ava: "npm:^6.2.0"
     cssnano: "npm:^7.0.6"
@@ -2986,7 +2986,7 @@ __metadata:
     postcss-viewport-unit-fallback: "npm:^1.0.1"
     tailwindcss: "npm:^3.4.17"
     typescript: "npm:^5.7.3"
-    wireit: "npm:^0.14.9"
+    wireit: "npm:^0.14.10"
     workbox-build: "npm:^7.3.0"
   peerDependencies:
     "@11ty/eleventy": ^3.0.0
@@ -3030,10 +3030,10 @@ __metadata:
     "@alwatr/wait": "npm:^1.1.16"
     "@nexim/snackbar": "npm:^1.0.4"
     "@nexim/typescript-config": "npm:^2.0.0"
-    "@types/node": "npm:^22.10.10"
+    "@types/node": "npm:^22.12.0"
     ava: "npm:^6.2.0"
     typescript: "npm:^5.7.3"
-    wireit: "npm:^0.14.9"
+    wireit: "npm:^0.14.10"
   languageName: unknown
   linkType: soft
 
@@ -3052,7 +3052,7 @@ __metadata:
     "@nexim/typescript-config": "npm:^2.0.0"
     ava: "npm:^6.2.0"
     typescript: "npm:^5.7.3"
-    wireit: "npm:^0.14.9"
+    wireit: "npm:^0.14.10"
   languageName: unknown
   linkType: soft
 
@@ -3100,10 +3100,10 @@ __metadata:
     "@nexim/pwa-install-prompt": "workspace:^"
     "@nexim/service-worker-notify": "workspace:^"
     "@nexim/typescript-config": "npm:^2.0.0"
-    "@types/node": "npm:^22.10.10"
+    "@types/node": "npm:^22.12.0"
     ava: "npm:^6.2.0"
     typescript: "npm:^5.7.3"
-    wireit: "npm:^0.14.9"
+    wireit: "npm:^0.14.10"
   languageName: unknown
   linkType: soft
 
@@ -3912,12 +3912,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/node@npm:^22.10.10":
-  version: 22.10.10
-  resolution: "@types/node@npm:22.10.10"
+"@types/node@npm:^22.12.0":
+  version: 22.12.0
+  resolution: "@types/node@npm:22.12.0"
   dependencies:
     undici-types: "npm:~6.20.0"
-  checksum: 10c0/3425772d4513cd5dbdd87c00acda088113c03a97445f84f6a89744c60a66990b56c9d3a7213d09d57b6b944ae8ff45f985565e0c1846726112588e33a22dd12b
+  checksum: 10c0/be220706732d95db2ed1c441c1e64cab90bf9a47519ce6f4c79cc5a9ec9d5c517131a149a9ac30afac1a30103e67e3a00d453ba7c1b0141608a3a7ba6397c303
   languageName: node
   linkType: hard
 
@@ -12573,7 +12573,7 @@ __metadata:
     "@nexim/eslint-config": "npm:^1.1.1"
     "@nexim/prettier-config": "npm:^1.1.0"
     "@nexim/typescript-config": "npm:^2.0.0"
-    "@types/node": "npm:^22.10.10"
+    "@types/node": "npm:^22.12.0"
     "@typescript-eslint/eslint-plugin": "npm:^7.15.0"
     "@typescript-eslint/parser": "npm:^7.15.0"
     ava: "npm:^6.2.0"
@@ -12586,7 +12586,7 @@ __metadata:
     prettier-plugin-packagejson: "npm:^2.5.8"
     prettier-plugin-tailwindcss: "npm:^0.6.11"
     typescript: "npm:^5.7.3"
-    wireit: "npm:^0.14.9"
+    wireit: "npm:^0.14.10"
   dependenciesMeta:
     prettier-plugin-tailwindcss@0.6.9:
       unplugged: true
@@ -12744,9 +12744,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"wireit@npm:^0.14.9":
-  version: 0.14.9
-  resolution: "wireit@npm:0.14.9"
+"wireit@npm:^0.14.10":
+  version: 0.14.10
+  resolution: "wireit@npm:0.14.10"
   dependencies:
     brace-expansion: "npm:^4.0.0"
     chokidar: "npm:^3.5.3"
@@ -12755,7 +12755,7 @@ __metadata:
     proper-lockfile: "npm:^4.1.2"
   bin:
     wireit: bin/wireit.js
-  checksum: 10c0/0c80f6564e4a09b0f9a49aff75d44bb0c64f1988fd5580253fd6cf3de900d398207975ab20b4fbca51302583c4b4f0f74b7888cb2c5f08281b1611e182799003
+  checksum: 10c0/27263ead76cbc3173012f97413efef76e210cfa1d2a217e88e823ea93ff2cc7e1f9b3dcb0d453132f6d8573eb3e27d3945e098349b09565fa0c4468757443b7f
   languageName: node
   linkType: hard
 
